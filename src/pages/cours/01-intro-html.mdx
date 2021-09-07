@@ -1,0 +1,252 @@
+## Semaine 1 - Introduction au web et au HTML
+
+### "Internet" vs "Web"
+
+L'internet consiste du réseau mondial qui relie différents appareils.
+
+Le web est un ensemble de technologies qui sont utilisés pour créer des documents et des applications qui sont accessibles à partir de navigateurs web, tel que Chrome et Firefox.
+
+### Historique
+
+Le web fut créé par Tim Berners-Lee, un scientifique travaillant au CERN en Suisse, en 1990. Le but initial était de permettre la collaboration scientifique et le partage d'information.
+
+Le web gagne en popularité à partir de 1993, à l'aide de l'introduction d'un navigateur web appelé Mosaic. Plusieurs sites pour utilisation publique commencent également à y apparaître.
+
+En 1995, l'arrivée de Windows 95 et du navigateur Internet Explorer augmente de beaucoup la popularité du web pour les gens normaux. Jusqu'à environ 2004, on peut y voir une explosion de sites commerciaux, l'arrivée de moteurs de recherche tel que Google et des investissements de plusieurs milliards de dollars dans la création de sites web.
+
+À partir de 2005, on voit venir l'apparition du "Web 2.0", qui consiste de sites web dont le contenu est généré par les utilisateurs. Dans cette catégorie se trouvent des sites comme MySpace, Facebook, Twitter, ainsi que des forums. Le web devient partie intégrale de la vie de tous ceux qui ont accès à Internet, et est utilisé de plus en plus dans la vie de tous les jours.
+
+Aujourd'hui, le web est devenue une plateforme à part entière pour le développement d'application. Plus besoin de développer des applications pour Windows ou Mac, la majorité des compagnies priorisent une application web pour les ordinateurs de bureau.
+
+### Technologies web
+
+Le web est composé de plusieurs technologies. Les langages principaux, soit le HTML, CSS et JavaScript, sont des langages dits "côté client" puisqu'ils sont interprétés par les navigateurs sur les ordinateurs "clients".
+
+#### HTML
+
+Le HTML, ou HyperText Markup Language, est un langage de balisage utilisé pour définir le contenu de pages web. Il est à la base de tout site web.
+
+#### CSS
+
+Le CSS, ou Cascading Style Sheets, est un langage qui permet d'appliquer des styles visuels et de la forme au contenu HTML. On défini le contenu d'une page à l'aide du HTML, et on défini l'apparence de ce contenu à l'aide de CSS.
+
+#### JavaScript
+
+Le JavaScript (aucun lien avec le langage Java) est un langage de programmation utilisé afin de créer des interactivités sur des pages web. La grande majorité des sites web aujourd'hui font grande utilisation du JavaScript afin de créer des expériences utilisateurs dynamiques et intéressantes.
+
+#### HTTP
+
+Le HTTP est le protocol utilisé sur le web pour communiquer entre les clients et les serveurs. Un client (par exemple, mon navigateur Chrome) fait une requête HTTP à un serveur (par exemple, le serveur qui héberge le site web du CÉGEP). Le serveur retourne une réponse HTTP pour le client, contenant la page web. Le client peut faire des requêtes additionelles par la suite afin d'obtenir des images, des scripts ou autre.
+
+Aujourd'hui, la grande majorité des sites utilisent le protocol HTTPS qui est encrypté et sécurisé de façon à ce que personne ne puisse intercepter la communication client-serveur.
+
+#### Technologies côté serveur
+
+Il existe également plusieurs technologieset langages du côté serveur afin de réaliser des sites web interactifs et dynamiques. ASP.NET, PHP et Node.js en sont quelques exemples. La majorité des langages de programmation de nos jours peuvent également être utilisé du côté serveur d'une application web.
+
+### Contenu vs présentation
+
+Il est important de différencier le contenu de la présentation d'une page web, puisque chacun est géré par une technologie différente.
+
+Le contenu d'une page web représente le texte, les liens, les images et autres médias, ainsi que la structure sémantique (où se trouve la navigation, le contenu principal, le pied de page, etc). On utilise le HTML pour définir le contenu d'une page.
+
+La présentation tant qu'à elle représente l'agencement de la page, son formattage (couleurs, tailles, etc.), la position des éléments, etc. On utilise le CSS pour définir la présentation d'une page.
+
+### Balises HTML
+
+Le HTML est composé de _balises_. Chaque _balise_ HTML représente un élément de la page. Voici ce à quoi ressemble une balise HTML pour le titre d'une page.
+
+```
+<title>Ceci est mon titre</title>
+```
+
+Une balise peut également se trouver seule, si elle n'a pas de contenu.
+
+```
+<hr>
+```
+
+Finalement, il est possible pour une balise d'avoir des _attributs_. Ces attributs permettent de définir des propriétés additionelles sur la balise.
+
+```
+<abbr title="HyperText Markup Language">HTML</abbr>
+```
+
+### Page de base
+
+Chaque page HTML commence par le même squelette de base. Dans VS Code, ce gabarit peut être créé pour vous en tapant `!` et en appuyant sur la touche entrée.
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+```
+
+La première ligne s'agit du _doctype_. Cela indique au navigateur d'afficher la page avec la version d'HTML la plus récente.
+
+On y trouve ensuite une balise `<html>`, qui regroupe l'entièreté de la page.
+
+La balise `<head>` n'est pas affichée aux utilisateurs de notre site web. Elle contient des propriétés additionelles de la page, tel que des meta données et le titre de la page.
+
+La balise `<body>` sera l'endroit où nous indiquerons tout le contenu de notre page.
+
+### Paragraphes
+
+```
+<p>Un premier paragraphe.</p>
+
+<p>Un deuxième paragraphe.</p>
+```
+
+### Séparateur horizontal
+
+```
+<hr>
+```
+
+### Formattage
+
+```
+<p>On peut indiquer des mots <strong>importants</strong> à l'aide de la balise strong.</p>
+```
+
+```
+<p>On peut mettre certains mots en <em>emphase</em> à l'aide de la balise em.</p>
+```
+
+```
+<p>On peut en <mark>surligner</mark> d'autres à l'aide de la balise mark.</p>
+```
+
+### Ordre des Balises
+
+Il est important de toujours fermer ses balises dans le bon ordre.
+
+```
+<p>Ceci est un <strong>bon</strong> exemple.</p>
+```
+
+```
+<p>Ceci est un <strong>mauvais exemple.</p></strong>
+```
+
+### En têtes
+
+```
+<h1>En tête de niveau 1</h1>
+
+<h1>En tête de niveau 2</h1>
+
+<h1>En tête de niveau 3</h1>
+
+<h1>En tête de niveau 4</h1>
+
+<h1>En tête de niveau 5</h1>
+
+<h1>En tête de niveau 6</h1>
+```
+
+### Citations
+
+```
+<blockquote>That's one small step for a man, one giant leap for mankind.</blockquote>
+```
+
+```
+<p>Il a vu que j'hésitais, il m'a alors dit <q>On ne vit qu'une seule vie!<q></p>
+```
+
+### Commentaires
+
+Afin de laisser des notes dans notre code HTML, il est possible d'utiliser des commentaires. Ceux-ci ne seront pas affichés aux utilisateurs.
+
+```
+<p>Notre école compte plus de 3000 étudiants!</p> <!-- dernière mise à jour septembre 2021 -->
+```
+
+### Abbréviations
+
+```
+<abbr title="HyperText Markup Language">HTML</abbr>
+```
+
+### Listes
+
+On peut créer des listes sans ordre avec `<ul>` et `<li>`.
+
+```
+<p>Liste de pommes.</p>
+<ul>
+	<li>Macintosh</li>
+	<li>Red Delicious</li>
+	<li>Granny Smith</li>
+</ul>
+```
+
+Ou encore des listes avec ordre en remplaceant `<ul>` par `<ol>`.
+
+```
+<p>Mes pommes préférées.</p>
+<ol>
+	<li>Macintosh</li>
+	<li>Red Delicious</li>
+	<li>Granny Smith</li>
+</ol>
+```
+
+On peut également _imbriquer_ des listes.
+
+```
+<p>Voici une liste de mes trucs préférés.</p>
+<ul>
+	<li>Films
+		<ol>
+			<li>Star Wars: Episode IV</li>
+			<li>Harry Potter et le prisonier d'Azkaban</li>
+			<li>Mission Impossible</li>
+		</ol>
+	</li>
+	<li>Séries télé
+		<ol>
+			<li>Breaking Bad</li>
+			<li>Fort Boyard</li>
+			<li>Tout le monde en parle</li>
+		</ol>
+	</li>
+	<li>Livres
+		<ol>
+			<li>Da Vinci Code</li>
+			<li>Le Guide du voyageur galactique</li>
+			<li>Le seigneur des anneaux</li>
+		</ol>
+	</li>
+</ul>
+```
+
+### Validation
+
+Il peut être utile de faire _valider_ notre code HTML afin d'en déceler des erreurs. Pour se faire, il suffit de le copier coller <a href="https://validator.w3.org/#validate_by_input">dans cet outil du W3C</a>.
+
+### Exercice
+
+Créez une page HTML avec les composantes suivantes:
+
+- Une en-tête de niveau 1 avec votre nom
+- Une en-tête de niveau 2 désignée "Renseignements personnels"
+- Un paragraphe qui donne votre nom et un peu d'information sur où vous avez grandi
+- Un paragraphe qui décrit ce que vous aimez faire dans vos temps libres
+- Une en-tête de niveau 3 désignée "Citation préférée"
+- Un bloc de citation contenant votre citation préférée
+- Une en-tête de niveau 2 désignée "Mes trucs préférés"
+- Une liste imbriquée sur deux niveaux
+  - Le premier niveau doit contenir une liste non ordonnée avec 3 catégories de choses préférées
+  - Le deuxième niveau sous chaque catégorie doit contenir une liste ordonnée avec 3 items préférés

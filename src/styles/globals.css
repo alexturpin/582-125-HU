@@ -37,3 +37,11 @@ p {
 section {
   @apply mb-6;
 }
+
+code {
+  @apply bg-gray-300;
+}
+
+pre {
+  @apply bg-gray-300 border border-black p-2 mb-3;
+}

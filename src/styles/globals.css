@@ -19,18 +19,24 @@ li {
 }
 
 h2 {
-  @apply text-2xl font-semibold mb-3;
+  @apply text-2xl font-semibold;
 }
 
 h3 {
-  @apply text-xl font-semibold mb-3;
+  @apply text-xl font-semibold;
 }
 
 h4 {
-  @apply font-semibold mb-3;
+  @apply font-semibold;
 }
 
-p {
+p,
+ul,
+ol,
+pre,
+h2,
+h3,
+h4 {
   @apply mb-3;
 }
 
@@ -43,5 +49,5 @@ code {
 }
 
 pre {
-  @apply bg-gray-300 border border-black p-2 mb-3;
+  @apply bg-gray-300 border border-black p-2;
 }

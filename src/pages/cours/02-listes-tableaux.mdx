@@ -1,0 +1,266 @@
+## Semaine 2 - Listes et tableaux
+
+### Citations
+
+```
+<blockquote>That's one small step for a man, one giant leap for mankind.</blockquote>
+```
+
+```
+<p>Il a vu que j'hésitais, il m'a alors dit <q>On ne vit qu'une seule vie!<q></p>
+```
+
+### Listes
+
+On peut créer des listes à puces (dites "sans ordre", _Unordered List_) avec `<ul>` et `<li>`.
+
+```
+<p>Liste de pommes.</p>
+<ul>
+	<li>Macintosh</li>
+	<li>Red Delicious</li>
+	<li>Granny Smith</li>
+</ul>
+```
+
+Ou encore des listes ordonnées (_Ordered List_) en remplaceant `<ul>` par `<ol>`.
+
+```
+<p>Mes pommes préférées.</p>
+<ol>
+	<li>Macintosh</li>
+	<li>Red Delicious</li>
+	<li>Granny Smith</li>
+</ol>
+```
+
+On peut également _imbriquer_ des listes.
+
+```
+<p>Voici une liste de mes trucs préférés.</p>
+<ul>
+	<li>Films
+		<ol>
+			<li>Star Wars: Episode IV</li>
+			<li>Harry Potter et le prisonier d'Azkaban</li>
+			<li>Mission Impossible</li>
+		</ol>
+	</li>
+	<li>Séries télé
+		<ol>
+			<li>Breaking Bad</li>
+			<li>Fort Boyard</li>
+			<li>Tout le monde en parle</li>
+		</ol>
+	</li>
+	<li>Livres
+		<ol>
+			<li>Da Vinci Code</li>
+			<li>Le Guide du voyageur galactique</li>
+			<li>Le seigneur des anneaux</li>
+		</ol>
+	</li>
+</ul>
+```
+
+### Exercice 1
+
+Créez votre CV (Curriculum Vitae) en HTML. Il doit comporter:
+
+- Une en-tête de niveau 1 avec votre nom
+- Une en-tête de niveau 2 intitulée "Description"
+- Un paragraphe avec une courte description de vous
+- Deux autres en-têtes de niveau 2 intitulées "Éducation" et "Expérience de travail"
+- Un minimum de 3 en-têtes de niveau 3 pour le nom de l'école ou du lieu de travail, placés sous l'en-tête niveau 2 approprié. Pour chaque formation ou emploi:
+  - Un paragraphe descriptif qui donne le nom de la formation ou le role de l'emploi en texte mis à l'_emphase_, et l'année de début et de fin en texte **important**
+  - Une liste qui décrit les apprentissages ou les tâches réalisées
+- Utilisez au moins une abbréviation dans votre CV
+- Utilisez au moins une citation dans votre CV
+
+### Tableaux
+
+Il est possible de créer des tableaux dans un site web afin d'afficher de l'information en rangées et colonnes. Il est important d'utiliser les tableaux seulement pour afficher des données tabulaires, et non pour faire de la mise en page ou du positionnement d'éléments.
+
+Un tableau comporte toujours une balise `<table>` afin de définir l'endroit où le tableau se trouvera:
+
+```
+<table>
+  ...
+</table>
+```
+
+À l'intérieur de la balise `<table>`, on peut y mettre des rangées, dénotées par `<tr>` (_Table Row_).
+
+```
+<table>
+	<tr>...</tr>
+	<tr>...</tr>
+</table>
+```
+
+À l'intérieur de chaque rangée `<tr>`, on peut inclure des cellules avec la balise `<td>` (_Table Data_).
+
+```
+<table>
+	<tr>
+		<td>Item</td>
+		<td>Prix</td>
+		<td>Code</td>
+		<td>Couleur</td>
+	</tr>
+	<tr>
+		<td>Pomme McIntosh</td>
+		<td>0,89 $ / lb</td>
+		<td>4019</td>
+		<td>Rouges</td>
+	</tr>
+	<tr>
+		<td>Pomme Red Delicious</td>
+		<td>1,04 $ / lb</td>
+		<td>3285</td>
+		<td>Rouges</td>
+	</tr>
+	<tr>
+		<td>Pomme Granny Smith</td>
+		<td>1,14 $ / lb</td>
+		<td>3071</td>
+		<td>Vertes</td>
+	</tr>
+</table>
+```
+
+### Styles
+
+Par défaut, les tableaux en HTML sont affichés sans bordure. Afin de rendre les tableaux plus agréables visuellement, nous allons rajouter un peu de CSS à notre fichier.
+
+Cet élément `<style>` devrait être placé directement sous l'élément `<head>`. La façon la plus simple de le faire est de le placer juste avant la fermeture `</head>`.
+
+```
+<style>
+	td, th { border: 1px solid black; padding: 0.5em; }
+	table { border-collapse: collapse; }
+	caption { font-size: 1.5em; margin: 0.5em }
+</style>
+```
+
+### Cellules d'en-tête
+
+On peut convert n'importe quelle cellule en cellule d'en-tête en changeant la balise `<td>` pour une balise `<th>` (_Table Header_).
+
+```
+<table>
+	<tr>
+		<th>Item</th>
+		<th>Prix</th>
+		<th>Code</th>
+		<th>Couleur</th>
+	</tr>
+  ...
+</table>
+```
+
+### Sections de tableau
+
+Il est possible de définir des sections d'en-tête, de corps et de pied de tableau. Ces sections permettent aux navigateurs d'afficher de longs tableaux de façon plus lisibles pour les utilisateurs. On utilise les balises `<thead>`, `<tbody>` et `<tfoot>` afin de définir les rangées d'en-tête, de corps et de pied.
+
+Ces balises doivent directement contenir des rangées, c'est à dire des balises `<tr>`.
+
+```
+<table>
+	<thead>
+		<tr>
+			<th>Item</th>
+			<th>Prix</th>
+			<th>Code</th>
+			<th>Couleur</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Pomme McIntosh</td>
+			<td>0,89 $ / lb</td>
+			<td>4019</td>
+			<td>Rouges</td>
+		</tr>
+		<tr>
+			<td>Pomme Red Delicious</td>
+			<td>1,04 $ / lb</td>
+			<td>3285</td>
+			<td>Rouges</td>
+		</tr>
+		<tr>
+			<td>Pomme Granny Smith</td>
+			<td>1,14 $ / lb</td>
+			<td>3071</td>
+			<td>Vertes</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<th>Item</th>
+			<th>Prix</th>
+			<th>Code</th>
+			<th>Couleur</th>
+		</tr>
+	</tfoot>
+</table>
+```
+
+### Légende du tableau
+
+On peut donner une légende à notre tableau à l'aide de la balise `<caption>`. Celle-ci doit se trouver directement sous l'élément `<table>`.
+
+```
+<table>
+	<caption>Pommes à vendre</caption>
+
+	<tr>
+		<th>Item</th>
+		<th>Prix</th>
+		<th>Code</th>
+		<th>Couleur</th>
+	</tr>
+  ...
+</table>
+```
+
+### Fusion de cellules
+
+Il est possible de fusioner des cellules à l'aide d'attributs HTML. Ces attributs peuvent s'appliquer aux balises `<td>` comme aux balises `<th>`:
+
+- `colspan` effectue une fusion vers la droite
+- `rowspan` effectue une fusion vers le bas
+
+Il est important de supprimer la cellule d'extra du tableau.
+
+```
+<table>
+	<tr>
+		<td>Pomme McIntosh</td>
+		<td>0,89 $ / lb</td>
+		<td>4019</td>
+		<td rowspan="2">Rouges</td>
+	</tr>
+	<tr>
+		<td>Pomme Red Delicious</td>
+		<td>1,04 $ / lb</td>
+		<td>3285</td>
+		<!-- cellule supprimée de cette rangée -->
+	</tr>
+	<tr>
+		<td>Pomme Granny Smith</td>
+		<td>1,14 $ / lb</td>
+		<td>3071</td>
+		<td>Vertes</td>
+	</tr>
+</table>
+```
+
+### Exercise 2
+
+Reproduire ce tableau à l'aide des balises HTML apprises ci-dessus:
+
+<p>
+  <span style={{ display: "none" }}>Nice try</span>
+  <img alt="Tableau à reproduire" src="/img/02-table-exercise.png" />
+</p>

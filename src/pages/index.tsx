@@ -57,6 +57,11 @@ const Home = () => {
               <a>Semaine 1 - Introduction au web et au HTML</a>
             </Link>
           </li>
+          <li>
+            <Link href="/cours/02-listes-tableaux">
+              <a>Semaine 2 - Listes et tableaux</a>
+            </Link>
+          </li>
         </ul>
       </section>
     </>

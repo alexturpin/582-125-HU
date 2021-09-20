@@ -62,6 +62,11 @@ const Home = () => {
               <a>Semaine 2 - Listes et tableaux</a>
             </Link>
           </li>
+          <li>
+            <Link href="/cours/03-liens-semantique">
+              <a>Semaine 3 - Liens et navigation et éléments sémantiques</a>
+            </Link>
+          </li>
         </ul>
       </section>
     </>

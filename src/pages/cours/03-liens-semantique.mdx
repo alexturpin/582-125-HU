@@ -1,0 +1,162 @@
+## Semaine 2 - Liens et navigation et éléments sémantiques
+
+### La balise de lien
+
+Afin de créer un lien vers une autre page, on utilise la balise `<a>`. L'attribut `href` est utilisé afin d'indiquer la destination du lien.
+
+```
+<p>Je suis étudiant au <a href="https://cegepoutaouais.qc.ca/">CÉGEP de l'Outaouais</a>.</p>
+```
+
+### Liens externes
+
+Afin de créer un lien externe, vers un autre site web, il faut absolument spécifier un URL complet, incluant le protocol tel que `http://` ou `https://`.
+
+### Ouverture d'un lien dans une nouvelle fenêtre
+
+Afin de provoquer l'ouverture d'un lien dans une nouvelle fenêtre ou un nouvel onglet, on peut ajouter l'attribut `target="_blank"` à notre balise `<a>`.
+
+```
+<p>Je suis étudiant au <a href="https://cegepoutaouais.qc.ca/" target="_blank">CÉGEP de l'Outaouais</a>.</p>
+```
+
+### Lien courriel
+
+On peut indiquer un lien vers une boîte de courriel spécifique à l'aide du préfixe `mailto:`.
+
+```
+<p>Si vous rencontrez des problèmes avec notre application, <a href="mailto:alex.turpin@gmail.com">envoyez-nous un courriel!</a></p>
+```
+
+Il est également possible d'indiquer d'autres détails pour le courriel tel le sujet. Plus de détails [dans l'article de MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#e-mail_links).
+
+### Lien numéro de téléphone
+
+On peut également indiquer un lien vers un numéro de téléphone. Ceci causera les navigateurs mobiles à proposer à l'utilisateur d'appeler le numéro en question.
+
+```
+<p>Si vous rencontrez des problèmes avec notre application, <a href="tel:15558675309">donnez-nous un coup de fil!</a></p>
+```
+
+### Exercise 1
+
+Créez une liste qui contiendra les éléments suivant:
+
+- Un lien vers un de vos site web préféré, à ouvrir dans la même fenêtre
+- Un lien vers un de vos site web préféré, à ouvrir dans une nouvelle fenêtre
+- Un lien pour vous écrire un courriel
+- Un lien pour vous appeler
+
+Validez votre code HTML à l'aide du [Validateur du W3C](https://validator.w3.org/#validate_by_input).
+
+### Liens dans une même page
+
+Il est possible de créer un lien vers un autre endroit dans la même page. Le navigateur s'occupera de faire défiler la page au bon endroit pour nous. Cette fonctionalité n'est possible que lorsque la page est assez longue pour avoir une barre de défilement.
+
+Premièrement, il faut identifier les éléments auxquels on voudra se rendre par lien à l'aide d'un attribut `id`:
+
+```
+<h1 id="haut">Mon site web</h1>
+```
+
+Ensuite, on peut créer un lien vers cet élément en utilisant un symbole carré `#` comme préfixe, suivi de la valeur de l'attribut `id` concerné:
+
+```
+<a href="#haut">Retour en haut</a>
+```
+
+### Exercise 2
+
+Créez une page web qui comporte les éléments suivants:
+
+- Une en-tête de niveau 1 intitulée "Pionniers de l'informatique"
+- Trois en-tête de niveau 2 pour les éléments suivants: "Ada Lovelace", "Alan Turing", "Linus Torvalds"
+- Sous chaque en-tête de niveau 2 créé précédemment, ajouter:
+  - 10 paragraphes de [Lorem Ipsum](https://loremipsum.io/)
+  - Un lien "Retour en haut" qui mène au haut de la page
+- Sous l'en-tête niveau 1, ajouter une liste avec un lien vers chaque en-tête de niveau 2 pour chaque pionnier, ressemblant à la navigation d'un article Wikipédia
+
+Validez votre code HTML à l'aide du [Validateur du W3C](https://validator.w3.org/#validate_by_input).
+
+### Page d'accueil
+
+La page d'accueil d'un site web est traditionellement appelée `index.html`.
+
+### Liens relatif
+
+Les liens relatifs permettent de naviguer à travers les différentes pages d'un site web de façon _relative_, c'est à dire qu'ils agissent de façon différente selon l'emplacement de la page dans laquelle ils se trouvent.
+
+Les exemples qui suivent utiliseront la même structure de dossier fictive:
+
+- `mon_site_web` (dossier)
+  - `index.html`
+  - `contact.html`
+  - `pionniers_informatique` (dossier)
+    - `ada_lovelace.html`
+    - `alan_turing.html`
+    - `linus_torvald.html`
+
+#### Lien relatif dans un même dossier
+
+On peut passer de `index.html` à `contact.html` avec le lien suivant:
+
+```
+<a href="contact.html">Nous contacter</a>
+```
+
+#### Lien relatif vers un sous-dossier
+
+Si on désire passer vers une page qui se trouve dans un sous-dossier, il faut indiquer le nom du dossier suivi de la barre oblique et du nom du fichier. Par exemple, pour passer de `index.html` à `ada_lovelace.html`:
+
+```
+<a href="pionniers_informatique/ada_lovelace.html">Ada Lovelace</a>
+```
+
+On peut également nommer plusieurs sous-dossiers, toujours avec la barre oblique après chacun:
+
+```
+<a href="pionniers_informatique/decedes/femmes/ada_lovelace.html">Ada Lovelace</a>
+```
+
+#### Lien relatif vers un dossier parent
+
+Si on désire "remonter" vers un dossier parent, on utilise la même technique qu'avec un sous-dossier mais on indique `../` pour chaque dossier parent qu'on souhaite "remonter".
+
+Par exemple, pour passer de `ada_lovelace.html` à `index.html`:
+
+```
+<a href="../index.html">Revenir à l'accueil</a>
+```
+
+### Liens absolus
+
+Lorsque notre site est hébergé sur un serveur, soit en ligne sur le web ou localement, il est possible d'utiliser un lien absolu. Les liens absolus doivent commencer par la barre oblique `/` et permettent de naviguer vers n'importe qu'elle page d'un site, à partir de n'importe où, en utilisant la même formulation.
+
+Quelques exemples de liens qui fonctionneront à partir de n'importe où sur le site web:
+
+- `<a href="/pionniers/ada_lovelace.html">Ada Lovelace</a>`
+- `<a href="/">Retour à l'accueil</a>`
+
+Malheureusement, ce type de lien ne pourra pas être utilisé sans serveur de développement local, mais ils seront utiles lors de cours de programmation côté serveur tel que le PHP ou l'ASP.NET.
+
+### Exercise 3
+
+Créez un site web qui comportera les éléments suivants:
+
+- Une page d'accueil `index.html` qui contient une en-tête et une liste de liens:
+  - Un lien vers la page contact
+  - Un lien vers la page de chaque pionnier
+- Une page de contact `contact.html` qui contient une en-tête et trois liens:
+  - Un lien pour contacter les propriétaires du site web par courriel
+  - Un lien pour contacter les propriétaires du site web par téléphone
+  - Un lien "Retour vers l'accueil" qui mène à la page d'accueil
+- Un dossier `pionniers` avec trois pages:
+  - `ada_lovelace.html`
+  - `alan_turing.html`
+  - `linus_torvald.html`
+- Sur chacune des pages de pionniers:
+  - Une en-tête avec le nom du pionnier
+  - 10 paragraphes de [Lorem Ipsum](https://loremipsum.io/)
+  - Un lien "Retour vers l'accueil" qui mène à la page d'accueil
+
+Validez votre code HTML à l'aide du [Validateur du W3C](https://validator.w3.org/#validate_by_input).

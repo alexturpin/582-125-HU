@@ -36,6 +36,9 @@ const Home = () => {
             <a href="https://www.w3schools.com/">W3Schools</a>
           </li>
           <li>
+            <a href="https://openclassrooms.com/fr/courses/1603881-apprenez-a-creer-votre-site-web-avec-html5-et-css3">Cours HTML et CSS OpenClassrooms</a>
+          </li>
+          <li>
             <a href="https://code.visualstudio.com/">Visual Studio Code</a>
           </li>
           <li>

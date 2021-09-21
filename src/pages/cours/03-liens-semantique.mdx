@@ -160,3 +160,64 @@ Créez un site web qui comportera les éléments suivants:
   - Un lien "Retour vers l'accueil" qui mène à la page d'accueil
 
 Validez votre code HTML à l'aide du [Validateur du W3C](https://validator.w3.org/#validate_by_input).
+
+### Éléments sémantiques
+
+Afin de structurer notre page et de permettre aux navigateurs et moteurs de recherche de la comprendre, il est important de structurer son site web à l'aide d'éléments dits "sémantiques".
+
+Ces éléments n'offrent pas de mise en page ou de présentation visuelle, mais vont nous aider à structurer les éléments de notre page en "zones". Elles permettront aussi aux navigateurs, lecteurs d'écran et moteurs de recherche de mieux comprendre et interagir avec notre page.
+
+Les éléments sont les suivants:
+
+- `<header>` pour une zone d'en-tête
+- `<nav>` pour une zone de navigation
+- `<section>` pour une section de page
+- `<main>` pour une section principale de page
+- `<article>` pour représenter l'entièreté d'un article sur une page
+- `<aside>` pour une zone mise à côté
+- `<footer>` pour une zone de pied de page
+
+Le site OpenClassrooms offre [un excellent résumé de ces éléments](https://openclassrooms.com/en/courses/1603881-apprenez-a-creer-votre-site-web-avec-html5-et-css3/1605881-structurez-votre-page), ainsi qu'une image d'exemple de leur utilisation.
+
+<img
+  src="https://user.oc-static.com/files/343001_344000/343677.png"
+  alt="Exemple d'utilisations de balises sémantiques"
+/>
+
+À noter qu'il s'agit bien ici d'un exemple d'une structure de site; il n'est pas nécessaire que la navigation soit à gauche, ou bien que le site soit structuré de cette exacte façon.
+
+#### Exercice 4
+
+Créez le squelette d'une page. Celui-ci devrait contenir:
+
+- Une zone d'en-tête en utilisant le bon élément sémantique
+  - La zone d'en-tête devrait contenir une en-tête de niveau 1 intitulée "Mon site personnel"
+- Une zone de navigation en utilisant le bon élément sémantique
+  - La zone de navigation devrait contenir une liste avec des liens vers les pages suivantes:
+    - Accueil
+    - Biographie
+    - Contact
+- Une section pour le contenu principal en utilisant le bon élément sémantique
+  - Le contenu de la section changera selon la page
+- Un pied de page en utilisant le bon élément sémantique
+  - Le pied de page devrait contenir un paragraphe avec la mention "© 2021 [votre nom]"
+
+Une fois votre squelette finalisé, faites un copier coller afin de créer vos trois pages.
+
+Assurez-vous que les liens de votre navigation fonctionnent bien dans vos 3 pages.
+
+Ajoutez ensuite le contenu à chaque page, dans la bonne balise sémantique.
+
+- Page accueil
+  - Une en-tête de niveau 2 "Accueil"
+  - Deux articles de blogs en utilisant le bon élément sémantique. Chaque article devrait contenir:
+    - Une en-tête de niveau 3 "Premier article" et "Deuxième article"
+    - 5 paragraphes de lorem ipsum
+- Page Biographie
+  - Une en-tête de niveau 2 "Biographie"
+  - 5 pragraphes de lorem ipsum
+- Page contact
+  - Un lien vers un courriel pour vous contacter
+  - Un lien vers un numéro de téléphone pour vous contacter
+
+Validez le code HTML de toutes vos pages à l'aide du [Validateur du W3C](https://validator.w3.org/#validate_by_input).

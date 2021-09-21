@@ -36,6 +36,9 @@ const Home = () => {
             <a href="https://www.w3schools.com/">W3Schools</a>
           </li>
           <li>
+            <a href="https://openclassrooms.com/fr/courses/1603881-apprenez-a-creer-votre-site-web-avec-html5-et-css3">Cours HTML et CSS OpenClassrooms</a>
+          </li>
+          <li>
             <a href="https://code.visualstudio.com/">Visual Studio Code</a>
           </li>
           <li>
@@ -60,6 +63,11 @@ const Home = () => {
           <li>
             <Link href="/cours/02-listes-tableaux">
               <a>Semaine 2 - Listes et tableaux</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/cours/03-liens-semantique">
+              <a>Semaine 3 - Liens et navigation et éléments sémantiques</a>
             </Link>
           </li>
         </ul>

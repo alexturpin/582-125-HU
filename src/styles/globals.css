@@ -49,5 +49,5 @@ code {
 }
 
 pre {
-  @apply bg-gray-300 border border-black p-2;
+  @apply bg-gray-300 border border-black p-2 whitespace-pre-wrap;
 }

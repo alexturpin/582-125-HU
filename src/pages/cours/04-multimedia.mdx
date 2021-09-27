@@ -1,0 +1,128 @@
+## Semaine 4 - Éléments multimédia (images, vidéo et audio)
+
+### Images
+
+Il est possible d'insérer une image en HTML à l'aide de la balise `<img>`. Il s'agit d'une balise auto fermante, c'est à dire qu'elle n'a qu'une seule balise d'ouverture et pas de balise de fermeture.
+
+On doit lui donner deux attributs:
+
+- `src` afin de donner un lien / une URL vers l'image en question. Il s'agit du même principe que pour un `href` avec `<a>`. Il faut utiliser le nom complet du fichier, incluant l'extension, par exemple `src="images/Chrysanthemum.jpg"`
+- `alt` afin de fournir une description pour l'image pour les personnes qui ne peuvent pas la voir. Si il s'agit d'une image décorative, on suggère d'utiliser une image d'arrière-plan en CSS plutôt mais il est aussi possible de fournir un attribut vide tel que `alt=""`.
+
+```
+<p><img src="images/Chrysanthemum.jpg" alt="Une belle fleur"></p>
+```
+
+La majorité des formats d'images (JPEG, PNG, SVG, etc.) sont pris en charge.
+
+#### Taille
+
+On peut changer la taille d'une image à l'aide de deux attributs:
+
+- `width` pour la largeur
+- `height` pour la hauteur
+
+Ces deux attributs prennent une valeur numérique représentant une taille en pixels. Afin de préserver la qualité des images, deux suggestions peuvent être appliquées:
+
+- N'utiliser qu'un seul de ces attributs à la fois, et jamais les deux en même temps. Ceci préservera le ratio et format de l'image
+- Toujours réduire la taille de l'image originale, ne jamais augmenter, car cela peut engendrer une perte de qualité dans les images matricielles
+
+```
+<p><img src="images/Chrysanthemum.jpg" alt="Une belle fleur" width="512"></p>
+```
+
+#### Lien
+
+Il est également possible de créer un lien à l'aide d'une image. Il suffit de combiner la balise `<a>` et `<img>`.
+
+```
+<p>
+	<a href="https://cegepoutaouais.qc.ca" target="_blank">
+		<img src="https://cegepoutaouais.qc.ca/wp-content/themes/tonikcegep/assets/images/header/logo-sm@2x.png" alt="Logo du CÉGEP">
+	</a>
+</p>
+```
+
+### Exercise 1
+
+Créez une page avec 3 différentes section. Dans chaque section, ajoutez une en-tête de niveau 2, une image de votre choix et 5 paragraphes de Lorem Ipsum.
+
+Validez votre code HTML à l'aide du [Validateur du W3C](https://validator.w3.org/#validate_by_input).
+
+### Vidéo
+
+Il est également possible d'insérer un fichier vidéo sur une page à l'aide de la balise `<video>`. Tout comme pour une image, on doit indiquer un lien / une URL vers la vidéo à insérer à l'aide de l'attribut `src`.
+
+```
+<p><video src="video/bunny.mp4"></p>
+```
+
+Plusieurs formats vidéo sont pris en charge, [selon le navigateur](https://www.w3schools.com/tags/tag_video.asp). Le format MP4 est pris en charge par la majorité des navigateurs.
+
+On peut modifier le comportement de cette balise à l'aide de quelques attributs:
+
+- `width` et `height` afin de contrôler la taille. Les mêmes suggestions que pour `<img>` s'appliquent
+- `controls` afin d'afficher des contrôles multimédia à l'utilisateur tel que le bouton lecture et arrêt
+- `autoplay` afin de faire jouer la vidéo dès que la page est chargée; en temps normal, ce n'est permis que si on indique également que le vidéo jouera en sourdine par défaut
+- `muted` afin de faire jouer le vidéo en sourdine par défaut
+- `loop` afin que le vidéo joue en boucle
+
+#### Vidéo YouTube
+
+De nos jours, la majorité des vidéos se trouvent sur des plateformes de contenu en ligne, tel que YouTube. Il est normalement possible d'intégrer un vidéo disponible sur ces plateformes directement sur votre site web.
+
+Pour YouTube, il faut utiliser l'option _Share_ (_Partager_) suivi de _Embed_ (_Intégrer_). YouTube fournira ensuite le code à copier et coller dans votre page HTML.
+
+```
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ifTF3ags0XI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
+
+(code copié de YouTube)
+
+### Audio
+
+Tout comme pour le vidéo, on peut intégrer un clip audio à notre page HTML à l'aide de la balise `<audio>`. Tout comme pour un vidéo, on doit indiquer un lien / une URL vers le clip audio à insérer à l'aide de l'attribut `src`.
+
+```
+<p><audio src="audio/horse.mp3"></p>
+```
+
+Plusieurs formats audio sont pris en charge, [selon le navigateur](https://www.w3schools.com/tags/tag_audio.asp). Le format MP3 est pris en charge par la majorité des navigateurs.
+
+On peut modifier le comportement de cette balise à l'aide de quelques attributs:
+
+- `controls` afin d'afficher des contrôles multimédia à l'utilisateur tel que le bouton lecture et arrêt
+- `autoplay` afin de faire jouer la vidéo dès que la page est chargée; en temps normal, ce n'est permis que si on indique également que le vidéo jouera en sourdine par défaut
+- `muted` afin de faire jouer le vidéo en sourdine par défaut
+- `loop` afin que le vidéo joue en boucle
+
+### Exercise 2
+
+Nous allons créer le site de portfolio d'un photographe. Celui ci comportera une page d'accueil, ainsi qu'une page pour chacune de ses 5 photos.
+
+Créez d'abord une page d'accueil avec les éléments suivants:
+
+- Un zone d'en-tête avec la bonne balise sémantique. La zone devrait contenir:
+  - Une en-tête de niveau 1 avec le nom du photographe, "Peter Parker"
+  - Une en-tête de niveau 2 avec le texte "Portfolio"
+- Une zone de contenu principal avec la bonne balise sémantique. La zone devrait contenir:
+  - 5 apperçus de photos de votre choix
+  - Les apperçus de photos devraient occuper une largeur de 128 pixels
+  - Chaque apperçu de photo devrait être un lien qui mène à la page sur la photo en question
+  - Un vidéo YouTube de votre choix
+- Une section de pied de page avec la bonne balise sémantique. La zone devrait contenir:
+  - Un paragraphe avec le texte "© 2021 Peter Parker"
+
+Créez ensuite chacune des 5 pages pour chaque photo. Chaque page devrait contenir les éléments suivants:
+
+- Un zone d'en-tête avec la bonne balise sémantique. La zone devrait contenir:
+  - Une en-tête de niveau 1 avec le nom du photographe, "Peter Parker"
+  - Une en-tête de niveau 2 avec un mot qui décrit la photo de la page en question
+- Une zone de contenu principal avec la bonne balise sémantique. La zone devrait contenir:
+  - Un lien "Retour à l'accueil" qui ramène à la page d'accueil
+  - La photo de la page avec une largeur de 512 pixels
+  - 5 paragraphes de Lorem Ipsum
+- Une section de pied de page avec la bonne balise sémantique. La zone devrait contenir:
+  - Un paragraphe avec le texte "© 2021 Peter Parker"
+
+Validez le code HTML de toutes vos pages à l'aide du [Validateur du W3C](https://validator.w3.org/#validate_by_input).

@@ -36,7 +36,9 @@ const Home = () => {
             <a href="https://www.w3schools.com/">W3Schools</a>
           </li>
           <li>
-            <a href="https://openclassrooms.com/fr/courses/1603881-apprenez-a-creer-votre-site-web-avec-html5-et-css3">Cours HTML et CSS OpenClassrooms</a>
+            <a href="https://openclassrooms.com/fr/courses/1603881-apprenez-a-creer-votre-site-web-avec-html5-et-css3">
+              Cours HTML et CSS OpenClassrooms
+            </a>
           </li>
           <li>
             <a href="https://code.visualstudio.com/">Visual Studio Code</a>
@@ -56,6 +58,11 @@ const Home = () => {
         <h3>Notes de cours</h3>
         <ul>
           <li>
+            <Link href="visual-studio">
+              <a>Trucs et astuces Visual Studio Code</a>
+            </Link>
+          </li>
+          <li>
             <Link href="/cours/01-intro-html">
               <a>Semaine 1 - Introduction au web et au HTML</a>
             </Link>
@@ -68,6 +75,11 @@ const Home = () => {
           <li>
             <Link href="/cours/03-liens-semantique">
               <a>Semaine 3 - Liens et navigation et éléments sémantiques</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/cours/04-multimedia">
+              <a>Semaine 4 - Éléments multimédia (images, vidéo et audio)</a>
             </Link>
           </li>
         </ul>

@@ -10,12 +10,16 @@ a:hover {
   @apply no-underline;
 }
 
-ul {
+ul, ol {
   @apply pl-5;
 }
 
-li {
+ul li {
   @apply list-disc;
+}
+
+ol li {
+  @apply list-decimal;
 }
 
 h2 {

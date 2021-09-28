@@ -84,17 +84,10 @@ Pour YouTube, il faut utiliser l'option _Share_ (_Partager_) suivi de _Embed_ (_
 Tout comme pour le vidéo, on peut intégrer un clip audio à notre page HTML à l'aide de la balise `<audio>`. Tout comme pour un vidéo, on doit indiquer un lien / une URL vers le clip audio à insérer à l'aide de l'attribut `src`.
 
 ```
-<p><audio src="audio/horse.mp3"></p>
+<p><audio src="audio/horse.mp3" controls></p>
 ```
 
 Plusieurs formats audio sont pris en charge, [selon le navigateur](https://www.w3schools.com/tags/tag_audio.asp). Le format MP3 est pris en charge par la majorité des navigateurs.
-
-On peut modifier le comportement de cette balise à l'aide de quelques attributs:
-
-- `controls` afin d'afficher des contrôles multimédia à l'utilisateur tel que le bouton lecture et arrêt
-- `autoplay` afin de faire jouer la vidéo dès que la page est chargée; en temps normal, ce n'est permis que si on indique également que le vidéo jouera en sourdine par défaut
-- `muted` afin de faire jouer le vidéo en sourdine par défaut
-- `loop` afin que le vidéo joue en boucle
 
 ### Exercise 2
 

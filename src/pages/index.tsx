@@ -51,6 +51,14 @@ const Home = () => {
           <li>
             <a href="https://validator.w3.org/#validate_by_input">Validateur HTML du W3C</a>
           </li>
+          <li>
+            <a href="https://www.w3.org/wiki/CSS/Properties/color/keywords">Noms de couleurs CSS</a>
+          </li>
+          <li>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Colors/Color_picker_tool">
+              Outil afin de sélectionner une couleur spécifique
+            </a>
+          </li>
         </ul>
       </section>
 
@@ -80,6 +88,11 @@ const Home = () => {
           <li>
             <Link href="/cours/04-multimedia">
               <a>Semaine 4 - Éléments multimédia (images, vidéo et audio)</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/cours/05-intro-css">
+              <a>Semaine 6 - Introduction au CSS</a>
             </Link>
           </li>
         </ul>

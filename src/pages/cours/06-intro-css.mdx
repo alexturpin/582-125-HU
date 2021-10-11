@@ -1,0 +1,274 @@
+## Semaine 5 - Introduction au CSS
+
+Le CSS (_Cascading Style Sheets_) est un langage de programmation web utilisé afin d'altérer l'apparence visuelle, la mise en forme et le positionnement des éléments HTML d'une page.
+
+### Où mettre le CSS
+
+Il est possible d'appliquer du CSS en HTMl de trois différentes façons.
+
+#### Directement sur les éléments à l'aide de l'attribut `style`
+
+```
+<p style="color: red;">Ceci est un exemple</p>¨
+```
+
+Cette méthode peut être utile si on désire appliquer certains styles à un seul élément, mais elle est inflexible.
+
+#### Dans le `<head>` d'une page à l'aide de la balise `<style>`
+
+```
+<head>
+	...
+
+	<style>
+		p {
+			color: red;
+		}
+	</style>
+</head>
+```
+
+Cette méthode permet d'appliquer des styles à plusieurs éléments à la fois et d'utiliser des sélecteurs plus avancés.
+
+#### Dans le `<head>` d'une page à l'aide de la balise `<style>`
+
+```
+<head>
+	...
+
+	<style>
+		p {
+			color: red;
+		}
+	</style>
+</head>
+```
+
+#### Dans un fichier externe à l'aide de la balise `<link>`
+
+Il est possible de créer un fichier externe en `.css` afin d'y mettre tout notre code CSS. L'avantage de cette méthode est qu'on peut appliquer le même code CSS à plusieurs pages sans duplication.
+
+```
+<head>
+	...
+
+	<link rel="stylesheet" href="style.css">
+</head>
+```
+
+### Syntaxe CSS
+
+Le code CSS est organisé à l'aide de _sélecteurs_. Un sélecteur permet de regrouper plusieurs balises HTML ensemble afin de leur appliquer du CSS. Chaque sélecteur peut comporter plusieurs _règles_. On peut y insérer des commentaires à l'aide de `/*` et `*/`. Chaque règle CSS doit se terminer par un point-virgule (`;`).
+
+```
+h1 { /* sélecteur */
+	color: red; /* une première règle */
+	font-size: 24px; /* une deuxième règle */
+}
+```
+
+### Sélecteurs de base
+
+#### Toutes les balises d'un certain type
+
+Il suffit de donner le nom de la balise. Par exemple, pour sélectionner tous les paragraphes:
+
+```
+p {
+	color: red;
+}
+```
+
+#### Toutes les balises d'un certain type qui se trouvent dans une autre balise
+
+On peut combiner des balises afin de sélectionner les éléments _descendants_. Par exemple, pour sélectionner tous les textes en importance qui se trouvent dans un paragraphe:
+
+```
+p strong {
+	color: red;
+}
+```
+
+#### Une balise avec un ID spécifique
+
+Comme pour un lien vers une balise avec un ID, on utilise le symbole de dièse (`#`) suivi du nom du ID.
+
+```
+#premier_paragraphe {
+	color: red;
+}
+```
+
+#### Une classe
+
+Puisqu'on ne peut pas utiliser un ID avec plusieurs balises différentes, lorsqu'on veut appliquer des styles à plusieurs balises, on peut utiliser une _classe_. Il faut d'abord l'ajouter aux balises en question à l'aide de l'attribut `class`:
+
+```
+<p class="important">...</p>
+
+<p>...</p>
+
+<p class="important">...</p>
+```
+
+On sélectionne ensuite les balises d'une même classe en utilisant le point (`.`) suivi du nom de la classe.
+
+```
+.important {
+	color: red
+}
+```
+
+### Balises universelles
+
+Parfois, on voudra appliquer des styles sur une partie spécifique de notre page qui n'est pas nécessairement encadrée par une balise en particulier. On peut utiliser les balises universelles afin de regrouper des éléments d'une page comme on le désire.
+
+#### Regrouper du texte à l'aide de `<span>`
+
+La balise `<span>` permet de regrouper des éléments de texte ensemble. Il s'agit d'une balise dite `inline`, au même titre que `<strong>` ou `<em>`.
+
+```
+	<p>Il est donc possible d'appliquer des styles à <span>certains mots seulement</span>!</p>
+```
+
+#### Regrouper plusieurs balises à l'aide de `<div>`
+
+La balise `<div>` permet de regrouper plusieurs autres balises ensemble. Il s'agit d'une balise dite `block`, au même titre que `<main>` ou `<nav>`.
+
+### Couleurs
+
+Afin d'indiquer une couleur en CSS, on peut utiliser plusieurs différentes méthodes.
+
+#### Nom de couleur
+
+On peut utiliser le nom de plusieurs couleurs de base en anglais. Une telle liste de couleurs est disponible [sur le site du W3C](https://www.w3.org/wiki/CSS/Properties/color/keywords).
+
+```
+p {
+	color: red;
+}
+```
+
+#### Code de couleur
+
+Si on désire utiliser une couleur plus spécifique, on peut utiliser un de 3 codes de couleurs, soit hexadécimal, RGB ou HSL. Il existe plusieurs outils en ligne afin d'aider à trouver ce code de couleur, [tel que celui de MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Colors/Color_picker_tool).
+
+```
+p {
+	color: #FF0000; /* rouge */
+}
+```
+
+### Règles CSS pour le formattage du texte
+
+#### Couleur du texte
+
+[`color`](https://developer.mozilla.org/en-US/docs/Web/CSS/color)
+
+```
+p {
+	color: red;
+}
+```
+
+#### Taille de la police
+
+[`font-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size)
+
+```
+p {
+	font-size: large;
+}
+```
+
+#### Taille de la police
+
+[`font-family`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size)
+
+```
+p {
+	font-family: Arial, sans-serif;
+}
+```
+
+#### Style de la police
+
+[`font-style`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-style)
+
+```
+p {
+	font-style: italic;
+}
+```
+
+#### Graisse de la police
+
+[`font-weight`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight)
+
+```
+p {
+	font-weight: bold;
+}
+```
+
+#### Décoration du texte
+
+[`text-decoration`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
+
+```
+p {
+	text-decoration: underline;
+}
+```
+
+#### Alignement du texte
+
+[`text-align`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align)
+
+```
+p {
+	text-align: center;
+}
+```
+
+#### Style des puces d'une liste
+
+[`list-style-type`](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type)
+
+```
+li {
+	list-style-type: lower-alpha;
+}
+```
+
+### Règles CSS pour les arrière plans
+
+#### Couleur d'arrière plan
+
+[`background-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-color)
+
+```
+body {
+	background-color: red;
+}
+```
+
+#### Image d'arrière plan
+
+[`background-image`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image)
+
+```
+body {
+	background-image: url('images/penguins.jpg');
+}
+```
+
+#### Répétition d'image d'arrière plan
+
+[`background-repeat`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-repeat)
+
+```
+body {
+	background-repeat: repeat;
+}
+```

@@ -91,7 +91,7 @@ const Home = () => {
             </Link>
           </li>
           <li>
-            <Link href="/cours/05-intro-css">
+            <Link href="/cours/06-intro-css">
               <a>Semaine 6 - Introduction au CSS</a>
             </Link>
           </li>

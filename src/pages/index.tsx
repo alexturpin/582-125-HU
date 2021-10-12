@@ -59,6 +59,9 @@ const Home = () => {
               Outil afin de sélectionner une couleur spécifique
             </a>
           </li>
+          <li>
+            <a href="http://www.csszengarden.com/">Exemples de variations de CSS</a>
+          </li>
         </ul>
       </section>
 

@@ -23,47 +23,79 @@ const Home = () => {
         <h3>Liens utiles</h3>
         <ul>
           <li>
-            <a href="https://developer.mozilla.org/en-US/">MDN</a>
+            <a target="_blank" rel="noreferrer" href="https://developer.mozilla.org/en-US/">
+              MDN
+            </a>
             <ul>
               <li>
-                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element"
+                >
                   Référence des éléments HTML
                 </a>
               </li>
             </ul>
           </li>
           <li>
-            <a href="https://www.w3schools.com/">W3Schools</a>
+            <a target="_blank" rel="noreferrer" href="https://www.w3schools.com/">
+              W3Schools
+            </a>
           </li>
           <li>
-            <a href="https://openclassrooms.com/fr/courses/1603881-apprenez-a-creer-votre-site-web-avec-html5-et-css3">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://openclassrooms.com/fr/courses/1603881-apprenez-a-creer-votre-site-web-avec-html5-et-css3"
+            >
               Cours HTML et CSS OpenClassrooms
             </a>
           </li>
           <li>
-            <a href="https://code.visualstudio.com/">Visual Studio Code</a>
+            <a target="_blank" rel="noreferrer" href="https://code.visualstudio.com/">
+              Visual Studio Code
+            </a>
           </li>
           <li>
-            <a href="https://loremipsum.io/">
+            <a target="_blank" rel="noreferrer" href="https://loremipsum.io/">
               Générateur de <em>Lorem Ipsum</em> (faux texte)
             </a>
           </li>
           <li>
-            <a href="https://validator.w3.org/#validate_by_input">Validateur HTML du W3C</a>
+            <a target="_blank" rel="noreferrer" href="https://validator.w3.org/#validate_by_input">
+              Validateur HTML du W3C
+            </a>
           </li>
           <li>
-            <a href="https://www.w3.org/wiki/CSS/Properties/color/keywords">Noms de couleurs CSS</a>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.w3.org/wiki/CSS/Properties/color/keywords"
+            >
+              Noms de couleurs CSS
+            </a>
           </li>
           <li>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Colors/Color_picker_tool">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Colors/Color_picker_tool"
+            >
               Outil afin de sélectionner une couleur spécifique
             </a>
           </li>
           <li>
-            <a href="http://www.csszengarden.com/">Exemples de variations de CSS</a>
+            <a target="_blank" rel="noreferrer" href="http://www.csszengarden.com/">
+              Exemples de variations de CSS
+            </a>
           </li>
           <li>
-            <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+            >
               Guide Flexbox de CSS-Tricks
             </a>
           </li>

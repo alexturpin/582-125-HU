@@ -103,6 +103,11 @@ const Home = () => {
               <a>Semaine 6 - Introduction au CSS et formattage de texte</a>
             </Link>
           </li>
+          <li>
+            <Link href="/cours/07-mise-en-page">
+              <a>Semaine 7 - Mise en page</a>
+            </Link>
+          </li>
         </ul>
       </section>
     </>

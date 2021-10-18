@@ -62,6 +62,11 @@ const Home = () => {
           <li>
             <a href="http://www.csszengarden.com/">Exemples de variations de CSS</a>
           </li>
+          <li>
+            <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">
+              Guide Flexbox de CSS-Tricks
+            </a>
+          </li>
         </ul>
       </section>
 
@@ -95,7 +100,7 @@ const Home = () => {
           </li>
           <li>
             <Link href="/cours/06-intro-css">
-              <a>Semaine 6 - Introduction au CSS</a>
+              <a>Semaine 6 - Introduction au CSS et formattage de texte</a>
             </Link>
           </li>
         </ul>

@@ -1,0 +1,336 @@
+## Semaine 7 - Mise en page
+
+### Balises universelles
+
+Parfois, on voudra appliquer des styles sur une partie spécifique de notre page qui n'est pas nécessairement encadrée par une balise en particulier. On peut utiliser les balises universelles afin de regrouper des éléments d'une page comme on le désire.
+
+#### Regrouper plusieurs balises à l'aide de `<div>`
+
+La balise `<div>` permet de regrouper plusieurs autres balises ensemble. Il s'agit d'une balise dite `block`, au même titre que `<main>` ou `<nav>`.
+
+```
+<div>
+	<p>Lorem ipsum...</p>
+	<p>Lorem ipsum...</p>
+	<p>Lorem ipsum...</p>
+</div>
+```
+
+La plupart du temps, on va préférer utiliser les balises sémantiques (`<main>`, `<article>`, etc.) mais si il n'existe pas de bon choix, on peut utiliser un `<div>` plutôt.
+
+### Bordure
+
+On peut appliquer une bordure à une balise à l'aide de la règle CSS `border`.
+
+[`border`](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
+
+```
+main {
+	border: 1px solid red;
+}
+```
+
+### Dimensions
+
+#### Largeur
+
+On peut indiquer une largeur à un élément à l'aide de la règle CSS `width`. Toutes les unités standard CSS sont valides, mais les pixels et les pourcentages sont très souvent utilisés.
+
+[`width`](https://developer.mozilla.org/en-US/docs/Web/CSS/width)
+
+```
+main {
+	width: 800px;
+}
+```
+
+#### Largeur minimale ou maximale
+
+On peut également indiquer une largeur _minimale_ ou _maximale_, qui permettra aux balises de se redimensionner par elles même tout en restant dans les limites imposées.
+
+[`min-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/min-width)
+
+```
+main {
+	min-width: 600px;
+}
+```
+
+[`max-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/max-width)
+
+```
+main {
+	max-width: 800px;
+}
+```
+
+#### Hauteur
+
+On peut indiquer une hauteur à un élément à l'aide de la règle CSS `height`. Toutes les unités standard CSS sont valides, mais les pixels et les pourcentages sont très souvent utilisés.
+
+[`height`](https://developer.mozilla.org/en-US/docs/Web/CSS/height)
+
+```
+main {
+	height: 800px;
+}
+```
+
+#### Hauteur minimale ou maximale
+
+On peut également indiquer une hauteur _minimale_ ou _maximale_, qui permettra aux balises de se redimensionner par elles même tout en restant dans les limites imposées.
+
+[`min-height`](https://developer.mozilla.org/en-US/docs/Web/CSS/min-height)
+
+```
+main {
+	min-height: 600px;
+}
+```
+
+[`max-height`](https://developer.mozilla.org/en-US/docs/Web/CSS/max-height)
+
+```
+main {
+	max-height: 800px;
+}
+```
+
+### Marges
+
+#### Marges intérieures
+
+Il est possible d'appliquer des marges intérieures à une balise à l'aide de la règle CSS `padding`. Cette règle CSS peut être utilisée de différentes façon:
+
+- `padding: 10px;` afin d'appliquer une marge intérieure de 10px sur tous les côtés
+- `padding: 5px 10px` afin d'appliquer une marge intérieure de 5px verticalement, et 10px horizontalement
+- `padding: 5px 10px 15px 20px` afin d'appliquer une marge intérieure de 5px en hauteur, 10px à droite, 15px en bas et 20px à gauche (dans le sens des aiguiles d'une montre)
+
+Il existe également des variantes pour chaque côté, soit `padding-top`, `padding-bottom`, `padding-left`, `padding-right`.
+
+[`padding`](https://developer.mozilla.org/en-US/docs/Web/CSS/padding)
+
+```
+main {
+	padding: 20px;
+}
+```
+
+#### Marges extérieures
+
+Il est possible d'appliquer des marges extérieures à une balise à l'aide de la règle CSS `margin`. Tout comme `padding`, cette règle CSS peut être utilisée de différentes façon:
+
+- `margin: 10px;` afin d'appliquer une marge extérieure de 10px sur tous les côtés
+- `margin: 5px 10px` afin d'appliquer une marge extérieure de 5px verticalement, et 10px horizontalement
+- `margin: 5px 10px 15px 20px` afin d'appliquer une marge extérieure de 5px en hauteur, 10px à droite, 15px en bas et 20px à gauche (dans le sens des aiguiles d'une montre)
+
+Il existe également des variantes pour chaque côté, soit `margin-top`, `margin-bottom`, `margin-left`, `margin-right`.
+
+[`margin`](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)
+
+```
+p {
+	margin-bottom: 20px;
+}
+```
+
+#### Centrer un bloc
+
+Il est souvent nécessaire de centrer un block de contenu sur une page. Ceci peut être accompli à l'aide d'une valeur spéciale de l'attribut `margin`. Les étapes à suivre sont:
+
+1. Donner une largeur fixe à votre bloc
+2. Appliquez des marges avec la valeur `auto` à gauche et à droite du bloc
+
+```
+	.conteneur {
+		width: 800px;
+		margin: 0 auto;
+	}
+```
+
+### Dépassement du contenu
+
+Si l'on donne à nos balises des dimensions fixes, il est possible que leur contenu dépasse les dimenssions fournies. On peut gérer ce comportement à l'aide de la règle `overflow`.
+
+[`overflow`](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
+
+```
+p {
+	overflow: auto;
+}
+```
+
+### Éléments flottants
+
+Parfois, il peut être utile de faire "flotter" un élément. C'est souvent utile pour agencer une image dans un paragraphe.
+
+[`float`](https://developer.mozilla.org/en-US/docs/Web/CSS/float)
+
+```
+<p>
+	<img src="test.png" alt="">
+	Lorem ipsum dolor sit amet...
+</p>
+```
+
+```
+p img {
+	float: left;
+}
+```
+
+Ceci peut toutefois entrainer un problème où le contenu qui est flotté peut dépasser des limites de la balise parent. Pour régler ce problème, on peut appliquer cette classe CSS `clearfix` à l'élément parent.
+
+```
+.clearfix:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+```
+
+```
+<p class="clearfix">
+	<img src="test.png" alt="">
+	Lorem ipsum dolor sit amet...
+</p>
+```
+
+### Exercise 1
+
+Nous allons créer le squelette d'un site web en CSS. Créez une page web avec les éléments suivants:
+
+- Une balise `<div>` qui agira à titre de "conteneur" pour tous les éléments de notre page
+- À l'intérieur de ce conteneur, les balises suivantes:
+  - `<header>` qui contiendra un `<h1>` avec un titre de votre choix
+  - `<nav>` qui contiendra une liste avec cinq liens fictifs de votre choix
+  - `<main>` qui contiendra un `<h2>` avec un titre de votre choix et 5 paragraphes de lorem ipsum
+  - `<aside>` qui contiendra [l'image d'avatar](/resources/avatar.png) et un paragraphe de lorem ipsum
+  - `<footer>` qui contiendra le texte `© 2021 Mon Site Web`
+- Appliquer les styles CSS suivants:
+  - À l'ensemble de la page
+    - Une police de caractère sans sérif de votre choix
+    - Une taille de police de 18 pixels
+    - Une couleur ou image d'arrière plan de votre choix
+  - Au conteneur de la page
+    - Centrer le bloc
+    - Une largeur maximale de 1000 pixels
+  - À la zone d'en-tête
+    - Centrer le texte
+  - À la zone de pied de page
+    - Centrer le texte
+    - Mettre le texte en gras
+  - À chaque "bloc principal", soit `<header>`, `<nav>`, `<main>`, `<aside>` et `<footer>`
+    - Une couleur d'arrière plan blanche
+    - Une bordure de 2 pixels de la couleur de votre choix
+    - Une marge intérieure de 10 pixels sur tous les côtés
+    - Une marge extérieure vers le bas de 20 pixels
+  - À la zone mise à côté
+    - Une taille de 128 pixels à l'image d'avatar
+    - Faire flotter l'image à gauche dans le paragraphe
+    - Donner une marge extérieure de 5 pixels à l'image
+    - Corriger les dépassements si il y en a
+    - Appliquer une largeur de 15% et une largeur minimale de 160 pixels à toute la zone de mise à côté
+    - Center le texte
+  - À la zone de contenu principale
+    - Appliquer une largeur de 75%
+
+### Modèle flexbox
+
+Afin d'aligner des balises blocs en CSS, on peut utiliser le modèle _flexbox_. Il est composé de plusieurs règles CSS qui nous permettront d'obtenir n'importe quel résultat.
+
+Le [guide Flexbox de CSS-Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) est un excellent outil de référence pour les règles flexbox.
+
+Afin d'utiliser flexbox, il faut définir un élément qui sera le parent tous les éléments qu'on désire aligner. Par exemple:
+
+```
+<div class="conteneur-flex">
+	<div class="enfant enfant1">Enfant 1</div>
+	<div class="enfant enfant2">Enfant 2</div>
+	<div class="enfant enfant3">Enfant 3</div>
+</div>
+```
+
+On utilise ensuite la règle CSS `display: flex;` afin de commencer à utiliser le modèle flexbox.
+
+```
+.conteneur-flex {
+	display: flex;
+}
+```
+
+#### Direction de l'axe principal
+
+Par défaut, l'axe principal est horizontal de gauche à droite. On peut inverser cet ordre, ou encore y mettre un ordre vertical.
+
+[`flex-direction`](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction)
+
+```
+.conteneur-flex {
+	display: flex;
+	flex-direction: column;
+}
+```
+
+#### Alignement sur l'axe principal
+
+[`justify-content`](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content)
+
+```
+.conteneur-flex {
+	display: flex;
+	justify-content: center;
+}
+```
+
+#### Alignement sur l'axe secondaire
+
+[`align-items`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items)
+
+```
+.conteneur-flex {
+	display: flex;
+	align-items: center;
+}
+```
+
+#### Retour à la ligne
+
+[`flex-wrap`](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap)
+
+```
+.conteneur-flex {
+	display: flex;
+	flex-wrap: center;
+}
+```
+
+#### Écart entre les éléments
+
+[`gap`](https://developer.mozilla.org/en-US/docs/Web/CSS/gap)
+
+```
+.conteneur-flex {
+	display: flex;
+	gap: center;
+}
+```
+
+### Exercise 2
+
+Jouer à [Flexbox Froggy](https://flexboxfroggy.com/).
+
+### Exercise 3
+
+À partir du code réalisé à l'exercise 1, ajoutez les fonctionalités suivantes:
+
+- Pour le menu de navigation:
+  - Retirer les puces complètement des éléments de liste
+  - À l'aide de flexbox, afficher les éléments en ligne horizontale
+  - Espacer les éléments de façon égale
+- Pour le contenu principal et le contenu mis à côté
+  - À l'aide de flexbox, afficher les éléments en ligne horizontale
+  - Espacer les éléments de sorte à ce qu'il n'y ait pas d'espace sur les côtés, mais un seul espace au milieu
+  - S'assurer que le contenu mis à côté est à gauche du contenu principal

@@ -1,4 +1,4 @@
-## Semaine 6 - Introduction au CSS
+## Semaine 6 - Introduction au CSS et formattage de texte
 
 Le CSS (_Cascading Style Sheets_) est un langage de programmation web utilisé afin d'altérer l'apparence visuelle, la mise en forme et le positionnement des éléments HTML d'une page.
 
@@ -119,6 +119,16 @@ On sélectionne ensuite les balises d'une même classe en utilisant le point (`.
 }
 ```
 
+#### Combiner les sélecteurs
+
+Il est possible de combiner plusieurs sélecteurs différents en un seul à l'aide de la virgule (`,`). Il s'agit ici du même principe que le `||` en programmation, la virgule agit donc à titre de "ou".
+
+```
+p, h1, .test {
+	color: red;
+}
+```
+
 ### Balises universelles
 
 Parfois, on voudra appliquer des styles sur une partie spécifique de notre page qui n'est pas nécessairement encadrée par une balise en particulier. On peut utiliser les balises universelles afin de regrouper des éléments d'une page comme on le désire.
@@ -130,10 +140,6 @@ La balise `<span>` permet de regrouper des éléments de texte ensemble. Il s'ag
 ```
 	<p>Il est donc possible d'appliquer des styles à <span>certains mots seulement</span>!</p>
 ```
-
-#### Regrouper plusieurs balises à l'aide de `<div>`
-
-La balise `<div>` permet de regrouper plusieurs autres balises ensemble. Il s'agit d'une balise dite `block`, au même titre que `<main>` ou `<nav>`.
 
 ### Couleurs
 

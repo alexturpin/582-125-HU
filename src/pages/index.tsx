@@ -106,37 +106,37 @@ const Home = () => {
         <h3>Notes de cours</h3>
         <ul>
           <li>
-            <Link href="visual-studio">
+            <Link target="_blank" rel="noreferrer" href="visual-studio">
               <a>Trucs et astuces Visual Studio Code</a>
             </Link>
           </li>
           <li>
-            <Link href="/cours/01-intro-html">
+            <Link target="_blank" rel="noreferrer" href="/cours/01-intro-html">
               <a>Semaine 1 - Introduction au web et au HTML</a>
             </Link>
           </li>
           <li>
-            <Link href="/cours/02-listes-tableaux">
+            <Link target="_blank" rel="noreferrer" href="/cours/02-listes-tableaux">
               <a>Semaine 2 - Listes et tableaux</a>
             </Link>
           </li>
           <li>
-            <Link href="/cours/03-liens-semantique">
+            <Link target="_blank" rel="noreferrer" href="/cours/03-liens-semantique">
               <a>Semaine 3 - Liens et navigation et éléments sémantiques</a>
             </Link>
           </li>
           <li>
-            <Link href="/cours/04-multimedia">
+            <Link target="_blank" rel="noreferrer" href="/cours/04-multimedia">
               <a>Semaine 4 - Éléments multimédia (images, vidéo et audio)</a>
             </Link>
           </li>
           <li>
-            <Link href="/cours/06-intro-css">
+            <Link target="_blank" rel="noreferrer" href="/cours/06-intro-css">
               <a>Semaine 6 - Introduction au CSS et formattage de texte</a>
             </Link>
           </li>
           <li>
-            <Link href="/cours/07-mise-en-page">
+            <Link target="_blank" rel="noreferrer" href="/cours/07-mise-en-page">
               <a>Semaine 7 - Mise en page</a>
             </Link>
           </li>

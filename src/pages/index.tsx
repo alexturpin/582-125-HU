@@ -100,7 +100,9 @@ const Home = () => {
             </a>
           </li>
           <li>
-            <a href="https://emojipedia.org/" target="_blank"  rel="noreferrer"></a>
+            <a href="https://emojipedia.org/" target="_blank" rel="noreferrer">
+              Emojipedia
+            </a>
           </li>
         </ul>
       </section>
@@ -110,37 +112,51 @@ const Home = () => {
         <ul>
           <li>
             <Link href="visual-studio">
-              <a target="_blank" rel="noreferrer">Trucs et astuces Visual Studio Code</a>
+              <a target="_blank" rel="noreferrer">
+                Trucs et astuces Visual Studio Code
+              </a>
             </Link>
           </li>
           <li>
             <Link href="/cours/01-intro-html">
-              <a target="_blank" rel="noreferrer">Semaine 1 - Introduction au web et au HTML</a>
+              <a target="_blank" rel="noreferrer">
+                Semaine 1 - Introduction au web et au HTML
+              </a>
             </Link>
           </li>
           <li>
             <Link href="/cours/02-listes-tableaux">
-              <a target="_blank" rel="noreferrer">Semaine 2 - Listes et tableaux</a>
+              <a target="_blank" rel="noreferrer">
+                Semaine 2 - Listes et tableaux
+              </a>
             </Link>
           </li>
           <li>
             <Link href="/cours/03-liens-semantique">
-              <a target="_blank" rel="noreferrer">Semaine 3 - Liens et navigation et éléments sémantiques</a>
+              <a target="_blank" rel="noreferrer">
+                Semaine 3 - Liens et navigation et éléments sémantiques
+              </a>
             </Link>
           </li>
           <li>
             <Link href="/cours/04-multimedia">
-              <a target="_blank" rel="noreferrer">Semaine 4 - Éléments multimédia (images, vidéo et audio)</a>
+              <a target="_blank" rel="noreferrer">
+                Semaine 4 - Éléments multimédia (images, vidéo et audio)
+              </a>
             </Link>
           </li>
           <li>
             <Link href="/cours/06-intro-css">
-              <a target="_blank" rel="noreferrer">Semaine 6 - Introduction au CSS et formattage de texte</a>
+              <a target="_blank" rel="noreferrer">
+                Semaine 6 - Introduction au CSS et formattage de texte
+              </a>
             </Link>
           </li>
           <li>
             <Link href="/cours/07-mise-en-page">
-              <a target="_blank" rel="noreferrer">Semaine 7 - Mise en page</a>
+              <a target="_blank" rel="noreferrer">
+                Semaine 7 - Mise en page
+              </a>
             </Link>
           </li>
         </ul>

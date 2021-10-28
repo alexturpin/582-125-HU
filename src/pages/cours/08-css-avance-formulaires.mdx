@@ -1,0 +1,290 @@
+## Semaine 8 - Techniques de CSS avancées et formulaires HTML
+
+### Sélecteurs avancés
+
+#### Sélecteur universel
+
+À l'aide du caractère `*`. Permet de sélectionner toutes les balises d'une page.
+
+```
+* {
+    border: 1px solid red;
+}
+```
+
+#### Sélecteur d'enfant
+
+À l'aide du caractère `>`. Contrairement au sélecteur de descendence (e.g. `ul li`), le sélecteur d'enfants permet de sélectionner seulement les enfants directs.
+
+```
+article > h2 { /* Tous les h2 qui sont l'enfant direct d'un article */
+    border: 1px solid red;
+}
+```
+
+#### Sélecteur de succession
+
+À l'aide du caractère `+`. Permet de sélectionner toute balise qui est immédiatement précédée d'une autre balise.
+
+```
+h1+h2 { /* Tous les h2 qui sont immédiatement précédés d'un h1 */
+    border: 1px solid red;
+}
+```
+
+#### Sélecteur d'attribut
+
+On peut sélectionner toute balise qui a un certain attribut à l'aide de `[attribut]`.
+
+```
+video[autoplay] { /* Tous les vidéos avec l'attribut autoplay */
+    border: 1px solid red;
+}
+```
+
+#### Sélecteur d'attribut par valeur exacte
+
+On peut sélectionner toute balise dont l'attribut a une valeur exacte à l'aide de `[attribut="valeur"]`.
+
+```
+a[target="_blank"] { /* Tous les a dont l'attribut target équivaut à "_blank" */
+    border: 1px solid red;
+}
+```
+
+#### Sélecteur d'attribut par valeur partielle
+
+On peut sélectionner toute balise dont l'attribut a une valeur partielle à l'aide de `[attribut*="valeur"]`.
+
+```
+a[href*=".qc.ca"] { /* Tous les a dont l'attribut href contient ".qc.ca" */
+    border: 1px solid red;
+}
+```
+
+#### Sélecteur d'attribut par valeur de départ
+
+On peut sélectionner toute balise dont l'attribut a une valeur de départ à l'aide de `[attribut^="valeur"]`.
+
+```
+a[href^="mailto:"] { /* Tous les a dont l'attribut href débute par "mailto:" */
+    border: 1px solid red;
+}
+```
+
+#### Sélecteur d'attribut par valeur de fin
+
+On peut sélectionner toute balise dont l'attribut a une valeur de fin à l'aide de `[attribut^="valeur"]`.
+
+```
+a[href^=".pdf"] { /* Tous les a dont l'attribut href termine par ".pdf" */
+    border: 1px solid red;
+}
+```
+
+#### Sélecteur de survol
+
+On peut sélectionner une balise qui est survolée par le curseur à l'aide du pseudo-sélecteur `:hover`.
+
+```
+nav a:hover {
+    border: 1px solid red;
+}
+```
+
+#### Sélecteur de lien déja visité
+
+On peut sélectionner un lien qui a déja été visité à l'aide du pseudo-sélecteur `:hover`.
+
+```
+nav a:visited {
+    border: 1px solid red;
+}
+```
+
+#### Sélecteur de premier enfant
+
+On peut sélectionner la première balise dans son parent (soit le premier "enfant") à l'aide du pseudo-sélecteur `:first-child`.
+
+```
+li:first-child {
+    border: 1px solid red;
+}
+```
+
+#### Sélecteur de dernier enfant
+
+On peut sélectionner la première balise dans son parent (soit le dernier "enfant") à l'aide du pseudo-sélecteur `:last-child`.
+
+```
+li:last-child {
+    border: 1px solid red;
+}
+```
+
+#### Sélecteur de nième enfant
+
+On peut sélectionner une balise par sa position dans son parent (soit le nième "enfant") à l'aide du pseudo-sélecteur `:nth-child(n)`, où `n` est une position qui commence par 1.
+
+```
+li:nth-child(2) {
+    border: 1px solid red;
+}
+```
+
+#### Pseudo-éléments
+
+On peut insérer des soi-disants "pseudo-éléments" en CSS afin d'insérer du contenu avant ou après un élément. On utilise `::before` pour insérer du contenu avant la balise, et `::after` pour le faire après la balise.
+
+```
+a[href*=".ca"]::before {
+    content: "🍁";
+    text-decoration: none;
+    display: inline-block;
+}
+```
+
+### Positionnement avancé
+
+#### Faire flotter un élément
+
+Parfois, on désire avoir un élément qui est positionné par rapport à l'écran du visiteur de notre site, et non pas par rapport à la page. Pour se faire, il faut combiner la règle CSS `position: fixed;` ainsi que de donner des valeurs de position relatives aux côtés de l'écran, grâce à `left`, `right`, `top` ou `bottom`.
+
+<!-- prettier-ignore -->
+<a target="_blank" rel="noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/CSS/position"><code>position</code></a>
+
+```
+.retour-haut {
+    position: fixed;
+    right: 100px;
+    bottom: 50px;
+```
+
+#### Transformations
+
+Il est également possible de transformer l'apparence d'un élément. Il suffit de donner des functions de transformations à la règle CSS `transform`.
+
+<!-- prettier-ignore -->
+<a target="_blank" rel="noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform"><code>transform</code></a>
+
+```
+.retour-haut:hover {
+    transform: scale(110%) rotate(15deg);
+}
+```
+
+### Coins arrondis
+
+<!-- prettier-ignore -->
+<a target="_blank" rel="noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius"><code>border-radius</code></a>
+
+```
+.retour-haut {
+    border-radius: 10px;
+}
+```
+
+### Dégradés
+
+<!-- prettier-ignore -->
+<a target="_blank" rel="noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient"><code>linear-gradient</code></a>
+
+```
+.retour-haut {
+    background: linear-gradient(to bottom, violet, yellow);
+}
+```
+
+### Animations
+
+Pour réaliser des animations en CSS, on doit d'abord définir notre animation à l'aide de <a target="_blank" rel="noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes"><code>@keyframes</code></a>.
+
+Il faut lui donner un nom, ainsi que fournir toutes les étapes de l'animation et leurs règles. Par exemple, ici pour notre animation appelée `mon-animation`, on donne deux étapes: `0%`, soit le début, avec une translation de 200 pixels à droite, et `100%`, soit la fin et une translation de 0 afin de revenir au départ.
+
+```
+@keyframes mon-animation {
+    0% {
+        transform: translateX(200px)
+    }
+
+    100% {
+        transform: translateX(0)
+    }
+}
+```
+
+Pour utiliser cette animation, on fait appel à la règle CSS <a target="_blank" rel="noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation"><code>animation</code></a>. On doit, au minimum, fournir le nom de notre animation ainsi que la durée désirée (en secondes ou millisecondes). On peut également donner d'autres paramètres tel que la courbe de temps.
+
+```
+h1 {
+    animation: titre 1.5s ease-out;
+}
+```
+
+### Formulaires
+
+#### Balise de formulaires
+
+Le contenu d'un formulaire HTML doit se trouver dans la balise `<form>`. On peut optionellement lui donner des attributs tels que `action` et `method` afin de contrôler ce qui se passera lors de l'envoi du formulaire.
+
+```
+<form action="https://httpbin.org/get">
+    ...
+</form>
+```
+
+#### Champ de saisie
+
+Il est possible de créer un champ de saisie à l'aide de la balise `<input>`. Cette balise devrait au minimum contenir un attribut `type` qui définit quel type de valeurs sera accepté. Quelques exemples:
+
+- `text`
+- `password`
+- `number`
+- `password`
+- `radio`
+- `email`
+- `tel`
+- `file`
+- `date`
+
+```
+<input type="text">
+```
+
+#### Menu déroulant
+
+Il est possible de permettre à l'utilisateur de choisir parmis un nombre d'options à l'aide des balises `<select>` et `<option>`.
+
+```
+<select>
+    <option value="QC">Québec</option>
+    <option value="ON">Ontario</option>
+    <option value="AB">Alberta</option>
+    <option value="BC">Colombie-Britannique</option>
+</select>
+```
+
+#### Bouton d'envoi
+
+Pour insérer un bouton d'envoi du formulaire, il faut utiliser un `<input>` avec comme type `submit`. On peut donner une étiquette au bouton à l'aide de l'attribut `value`.
+
+```
+<input type="submit" value="Envoyer">
+```
+
+#### Noms de paramètres lors de l'envoi de données
+
+Si on envoie notre formulaire vers un serveur, il faut aussi définir le noms des paramètres pour chacun des champs du formulaire. On peut le faire à l'aide de la balise `name`.
+
+```
+<input type="email" name="courriel">
+```
+
+#### Étiquettes
+
+Afin d'aider les utilisateurs à naviguer les formulaires, il est important d'ajouter des étiquettes pour chaque champs. Pour se faire, on peut utiliser la balise `<label>`, à l'aide de l'attribut `for` afin de lier l'étiquette à un champ avec le même ID.
+
+```
+<label for="courriel">Courriel:</label>
+<input type="email" name="courriel" id="courriel">
+```

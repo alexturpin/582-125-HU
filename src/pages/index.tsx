@@ -159,6 +159,13 @@ const Home = () => {
               </a>
             </Link>
           </li>
+          <li>
+            <Link href="/cours/08-css-avance-formulaires">
+              <a target="_blank" rel="noreferrer">
+                Semaine 8 - Techniques de CSS avancées et formulaires HTML
+              </a>
+            </Link>
+          </li>
         </ul>
       </section>
     </>

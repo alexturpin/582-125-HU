@@ -1,0 +1,64 @@
+## Semaine 9 - Techniques de mise en page responsive
+
+### Mise en page responsive
+
+On dit d'un site web qu'il est "responsive" lorsqu'il s'adapte selon la taille de l'écran d'un utilisateur. <a target="_blank" rel="noreferrer" href="https://www.oberlo.com/statistics/mobile-internet-traffic">Près de 50% des visites web</a> sont faites à partir d'un navigateur mobile en 2021. Il est donc plus important que jamais d'avoir un site qui s'adapte bien à toutes les tailles d'écran.
+
+#### Outils développeur
+
+Dans le navigateur Chrome, on peut utiliser le <a href="https://developer.chrome.com/docs/devtools/device-mode/" target="_blank" rel="noreferrer">"Device Mode"</a> <img src="https://wd.imgix.net/image/admin/9FiBHFCzfPgP8sy6LMx7.png?auto=format&w=51" alt="device mode" width="24" /> afin de déboguer les tailles d'écran.
+
+#### Tailles d'écran (ou _breakpoints_)
+
+De nos jours, il existe une multitude d'appareils de formats tous aussi différents les uns que les autres. Il est donc impossible de catégoriser tous les appareils dans quelques tailles d'écrans spécifiques. Toutefois, afin d'avoir une idée générale, voici quelques tailles d'écran populaires à utiliser pour vos _breakpoints_ CSS.
+
+| Taille d'écran  | Largeur en pixels |
+| --------------- | ----------------- |
+| Petit           | 640px             |
+| Moyen           | 768px             |
+| Grand           | 1024px            |
+| Très grand      | 1280px            |
+| Très très grand | 1536px            |
+
+### Media queries
+
+Afin de cibler certaines tailles d'écran seulement en CSS, on peut utiliser les _media queries_. Il s'agit d'un regroupement de sélecteur CSS qui ne s'appliquera que lorsque certaines conditions sont remplies.
+
+<!-- prettier-ignore -->
+### <a target="_blank" rel="noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media"><code>@media</code></a>
+
+On peut créer un _media query_ à l'aide du mot clé `@media`. Il est ensuite possible de donner des conditions.
+
+#### Type de média
+
+Pour créer un media query qui s'appliquera à tous les écrans:
+
+```
+@media screen {
+    ...
+}
+```
+
+Il existe d'autres options tel que:
+
+- `print` pour la version d'impression
+- `speech` pour les styles pour les lecteurs d'écran
+
+#### Attributs de média
+
+On peut combiner le type de média avec autant de conditions d'attributs que l'on souhaite. Afin de tout combiner, on peut utiliser les opérateurs `and`, `not` ou encore la virgule (`,`).
+
+Il est souvent question d'appliquer des styles selon une taille d'écran en particulier. Pour se faire, on utilisera souvent les règles d'attributs suivantes:
+
+- `min-width`
+- `max-width`
+
+Le _width_ dans ce contexte correspond à la largeur de la zone visible de la page.
+
+Lorsqu'on utilise ces règles, il faut les entourer de parenthèse à l'intérieur de notre media query. Quelques exemples d'utilisation:
+
+```
+    @media (max-width: 600px) { ... } /* Tailles d'écran plus petites que 600 pixels */
+    @media (min-width: 1000px) { ... } /* Tailles d'écran plus grosses que 1000 pixels */
+    @media screen and (max-width: 600px) and (min-width: 1000px) { ... } /* Appareils avec écrans, et une taille d'écran plus petite que 600 pixels */
+```

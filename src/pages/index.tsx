@@ -166,6 +166,13 @@ const Home = () => {
               </a>
             </Link>
           </li>
+          <li>
+            <Link href="/cours/09-responsive">
+              <a target="_blank" rel="noreferrer">
+               Semaine 9 - Techniques de mise en page responsive
+              </a>
+            </Link>
+          </li>
         </ul>
       </section>
     </>

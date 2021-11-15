@@ -104,6 +104,18 @@ const Home = () => {
               Emojipedia
             </a>
           </li>
+          <li>
+            <a href="https://netlify.com" target="_blank" rel="noreferrer">
+              Netlify
+            </a>
+            <ul>
+              <li>
+                <a href="https://nodejs.org/en/download/" target="_blank" rel="noreferrer">
+                  Téléchargement de Node.js
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </section>
 
@@ -169,7 +181,14 @@ const Home = () => {
           <li>
             <Link href="/cours/09-responsive">
               <a target="_blank" rel="noreferrer">
-               Semaine 9 - Techniques de mise en page responsive
+                Semaine 9 - Techniques de mise en page responsive
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/cours/10-hebergement-referencement">
+              <a target="_blank" rel="noreferrer">
+                Semaine 10 - Hébèrgement et référencement
               </a>
             </Link>
           </li>

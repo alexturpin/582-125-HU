@@ -1,0 +1,110 @@
+## Semaine 10 - Hébèrgement et référencement
+
+### Hébergement
+
+Jusqu'à maintenant, nous avons développé des sites web directement sur nos ordinateurs. Afin de rendre ces sites webs accessible à nos visiteurs potentiels, il faudra trouver un serveur où les héberger.
+
+Il existe différents "niveaux" d'hébergement de serveurs. On peut monter un serveur et le garder chez soi, ou encore louer un emplacement physique dans un centre de données. De nos jours, la façon la plus courant sera d'utiliser une plateforme d'hébergement dans le cloud. Le cloud nous permet de très rapidement créer des serveurs à peu de coûts et d'efforts.
+
+#### Types de site web à héberger
+
+Il est également important de comprendre le type de site web qu'on souhaite héberger.
+
+- Si le site web utilise uniquement des technologies côté client, c'est à dire le HTML, CSS et JavaScript, on le qualifier de _site statique_. Il est alors très facile et très peu couteux à héberger. La plupart des solutions d'hébergement statiques modernes utilisent également un <abbr title="Content Distribution Network">CDN</abbr> afin de livrer les fichiers le plus rapidement possible aux utilisateurs.
+- Si notre site web doit utiliser en plus une technologie de côté serveur, tel que le PHP, l'ASP ou encore Node.js, on doit s'assurer que le serveur qui hébergera notre site web prendra en charge la technologie nécessaire. La plupart du temps, lorsqu'on parle d'une application qui permet de poser des actions ou d'interragir avec une base de donnée, une technologie côté serveur sera utilisée. Ce type d'hébergement plus dynamique peut être plus difficile et couteux à utiliser.
+
+À noter qu'il est possible d'héberger des parties distinctes d'un site web de façons différentes. Par exemple, les pages d'informations et de marketing d'un site web peuvent être hébergées de façon statiques, tandis que le panneau d'administration pourrait utiliser un hébergement dynamique côté serveur.
+
+#### Services d'hébergement bien connus
+
+Voici une liste de quelques services d'hébergement bien connus et fiables. La liste est classée par puissance et capacité des services d'hébergement, mais se souvenir qu'avec la puissance et capacité viennent aussi la complexité et les coûts.
+
+- **Services avancés qui permettent l'hébergement d'applications complexes. Beaucoup plus difficile à utiliser, mais contrôle absolu.**
+  - <abbr title="Amazon Web Services">AWS</abbr>
+  - Microsoft Azure
+  - Digital Ocean
+- **Services "entre deux" qui permettent l'hébergement d'applications de façon simple.**
+  - Heroku
+  - Digital Ocean App Platform
+  - BlueHost (PHP)
+  - Render
+  - Vercel
+- **Services qui permettent l'hébergement rapide, facile et gratuit de sites web statiques**
+  - Vercel
+  - Netlify
+  - GitHub Pages
+  - CloudFlare Pages
+
+#### Méthodes de déploiement
+
+Afin de mettre à jour ou de créer pour la première fois un site web hébergé, il faut faire un _déploiement_. Le déploiement s'occupe de transférer les fichiers nécessaires au fonctionnement du site web et de configurer le serveur qui hébergera le site web. Il existe deux catégories générales de déploiement:
+
+- Le **déploiement sur demande** est le moins complexe et ne nécéssite pas que le code de votre site soit entreposé de façon spécifique. Il peut être fait à partir d'une invite de commande, ou encore à l'aide d'un client FTP pour effectuer le transfert de fichiers.
+- Le **déploiement en continu** (CI/CD ou _continuous deployment_) est une technique de déploiement qui permet d'automatiquement mettre en ligne le nouveau code, après avoir effectué des vérifications automatique. Cette méthode requiert au minimum que le code soit entreposé à l'aide d'un système de gestion de code source, tel que Git.
+
+### Hébergement à l'aide de Netlify
+
+Un des meilleurs hébergeurs gratuits de site statique est [Netlify](https://netlify.com). Une fois un compte créé, on doit également installer leur programme d'invite de commande (aussi appelé <abbr title="Command Line Interface">CLI</abbr>) afin de configurer notre déploiement.
+
+#### Installation et configuratiom du CLI
+
+Le CLI a besoin de Node.js pour fonctionner, il faut donc d'abord s'assurer que Node.js version 10+ soit bien installé sur votre ordinateur avant de débuter. [Lien pour le téléchargement de Node.js](https://nodejs.org/en/download/).
+
+Une fois Node.js installé, il suffit d'utiliser la commande suivante:
+
+```
+npm install netlify-cli -g
+```
+
+On peut ensuite vérifier si le CLI est bien installé en utilisant simplement la commande `netlify`.
+
+Avant de pouvoir déployer notre application, il faudra également s'identifier à travers l'invite de commande. Pour se faire, utiliser la commande suivante et suivre les instructions qui vous mèneront à vous identifier dans votre navigateur.
+
+```
+netlify login
+```
+
+#### Déploiement
+
+Une fois le CLI de Netlify d'installé et de configuré, nous sommes prêts à déployer notre premier site.
+
+Premièrement, naviguez à l'aide de votre invite de commande à l'endroit où se trouve les fichiers de votre site web. On utilisera ensuite la commande suivante:
+
+```
+netlify deploy
+```
+
+Lors de la première exécution de cette commande pour un site web, le CLI vous posera quelques questions.
+
+```
+This folder isn't linked to a site yet
+? What would you like to do? (Use arrow keys)
+> Link this directory to an existing site
+  +  Create & configure a new site
+```
+
+Choisir `Create & configure a new site`. Choisir ensuite la seule _Team_ qu'on vous offre, ainsi qu'un nom pour votre site web (ou utilisez le nom par défaut).
+
+```
+Please provide a publish directory (e.g. "public" or "dist" or "."):
+```
+
+Il s'agit ici du dossier qui contient votre fichier `index.html`. Si il s'agit du dossier de premier niveau de votre site web, dans lequel vous êtes présentement dans votre invite de commande, indiquez `.`
+
+Netlify déploiera ensuite une version brouillon de votre site, qui vous permettra de faire un contrôle de la qualité. Rendez-vous à l'adresse indiquée par le `Website Draft URL:` et vérifiez que tout fonctionne.
+
+Une fois que tout a été vérifié, vous pouvez mettre votre site en ligne à l'aide de:
+
+```
+netlify deploy --prod
+```
+
+<!--
+### Noms de domaine
+
+### Structure de dossier
+
+Par type vs par domaine
+
+### Référencement
+-->

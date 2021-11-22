@@ -99,12 +99,83 @@ Une fois que tout a été vérifié, vous pouvez mettre votre site en ligne à l
 netlify deploy --prod
 ```
 
-<!--
 ### Noms de domaine
 
-### Structure de dossier
+Tout site web hébergé sur le web se trouve à une adresse IP. Toutefois, afin d'éviter d'avoir à se souvenir d'adresses IP, on donne à nos sites web des _noms de domaines_. Un nom de domaine est simplement la partie principale de l'adresse d'un site web, tel que cegepoutaouais.qc.ca ou encore alexturpin.com.
 
-Par type vs par domaine
+#### Comment obtenir un nom de domaine
+
+Un nom de domaine peut être acheté si il est encore disponible. La plupart des noms de domains coûtent entre 10 $ et 20 $ par année. Il est possible de renouveller automatiquement afin de garder un nom de domaine pour toujours.
+
+Un nom de domaine est enregistré auprès d'un _registraire_. Il existe plusieurs registraires, et tous les registraires peuvent vous permettre d'acheter la plupart des noms de domaine. Vous pouvez également transférer un nom de domaine d'un registraire à un autre.
+
+Il est fort possible que votre hébergement offre des services d'enregistrement de noms de domaine. Vous pouvez également l'enregistrer chez un registraire indépendant tel que https://www.namecheap.com/
+
+#### Sous domaine
+
+Un nom de domaine vient avec un nombre illimité de _sous domaines_: c'est à dire des domaines partiels tel que portfolio.alexturpin.com ou 582-125-hu.alexturpin.com. Ces sous-domaines sont configurables par vous même et peuvent pointer vers n'importe quel hébergement ou serveur.
+
+#### DNS
+
+Le système de DNS de l'internet agit à titre de sorte de "botin téléphonique", associant un nom de domaine à une adresse IP. Pour se faire, lorsqu'on tente de se connecter à un nom de domaine en particulier, par exemple alexturpin.com, notre ordinateur ira demander au serveur autoritaire qui s'occupe du .com de nous donner l'adresse d'un autre serveur. On suivra ensuite cette chaîne de serveur jusqu'à ce qu'on obtienne l'adresse IP désirée.
+
+Ce résultat sera mis dans une cache pour un certain temps, c'est pourquoi les changements DNS peuvent prendre de 24 à 72 heures avant d'être réflectés.
+
+On peut faire une analyse de la configuration DNS d'un nom de domaine à l'aide d'un outil tel que `nslookup`. Des outils en ligne tel que https://www.nslookup.io/ existent.
+
+#### Configuration de zone DNS
+
+Le panneau de bord de votre registraire vous permettra de configurer les zones DNS pour votre domaine. Il est préférable de trouver des instructions de configuration directement de votre hébergeur. Les instructions seront d'habitude de configurer un CNAME ou encore un A record.
 
 ### Référencement
--->
+
+Le référencement, ou <abbr title="Search Engine Optimization">SEO</abbr> consiste à optimiser son site afin qu'il apparaisse dans les différents moteurs de recherche tel que Google.
+
+Dans le passé, certaines techniques étaient possible tel que l'ajout de mots clés de façon stratégique sur sa page. De nos jours, il faut simplement bâtir une bonne expérience utilisateur ainsi qu'un site informatif. Il existe quelques techniques pour se faire.
+
+#### Optimisation des balises
+
+Certaines balises sont particulièrement importantes pour le référencement.
+
+La balise `<title>` qui se trouve dans le `<head>` de la page, donne à la page son titre dans le navigateur et Google. Elle devrait contenir le nom de la page ainsi que le nom du site web.
+
+La balise `<meta name="description" content="Le meilleur gym en ville!">`, qui va dans le `<head>` de la page, permet de donner une brève description du contenu de la page.
+
+Il faut également prendre soin d'utiliser les éléments sémantiques afin de structurer notre site web, tels que `<main>`, `<nav>`, `<header>`, `<footer>`, `<article>`, etc.
+
+L'utilisation des en-têtes est également importante. Chaque page devrait contenir une seule en-tête `<h1>` avec le nom du site, ainsi qu'une seule en-tête `<h2>` avec le nom de la page. Il faut également utiliser les en-têtes en ordre décroissant et logique.
+
+#### Vérifications Lighthouse
+
+Il existe un outil de Google qui permet la vérification d'une page web. L'outil rapportera un score ainsi qu'une liste de problèmes pour plusieurs catégories.
+
+On peut utiliser l'outil soit à partir du site web https://web.dev/measure/ ou encore de l'onglet "Lighthouse" des outils de développement de Google Chrome.
+
+Les catégories évaluées sont les suivantes:
+
+- **Performance**, soit la vitesse à laquelle la page charge et peut être utilisée par l'utilisateur
+- **Accessibility**, soit la capacité de différents types d'utilisateurs à utiliser votre page
+- **Best practices**, afin de vous guider vers de meilleures habitudes de construction de pages web
+- **SEO**, afin d'optimiser le référencement de votre site web
+
+#### Outils d'analyse
+
+Afin de vérifier nos résultats de référencement et la performance de nos efforts de marketing, on peut utiliser certains outils.
+
+- [Google Search Console](https://search.google.com/search-console/about) permet de comprendre et analyser les recherches Google qui mènent les gens à notre site web.
+- [Google Analytics](https://analytics.google.com/analytics/web/) permet de faire l'analyse des visiteurs de notre site web, de leur provenance et de leur comportement
+
+### Balises pour média sociaux
+
+Lors du partage de votre site web sur les médias sociaux, il est possible de configurer l'apparence des posts à l'aide de balises meta _Open Graph_.
+
+```
+<meta property="og:url" content="http://gymturpin.com" />
+<meta property="og:title" content="Gym Turpin" />
+<meta property="og:description" content="Le meilleur gym en ville!" />
+<meta property="og:image" content="http://gymturpin.com/images/banniere.jpg" />
+```
+
+Toutes les adresses fournies dans les balises meta Open Graph doivent être des adresses complètes, incluant le nom de domaine.
+
+Il est possible de tester l'apperçu de notre page web à l'aide d'outils fournis par [Facebook](https://developers.facebook.com/tools/debug/) et [Twitter](https://cards-dev.twitter.com/validator).

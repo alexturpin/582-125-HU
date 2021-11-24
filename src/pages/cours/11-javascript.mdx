@@ -1,0 +1,226 @@
+## Semaine 11 - JavaScript
+
+### Bases du JavaScript
+
+#### Introduction
+
+Le JavaScript est un des trois langages côté client principaux du web, avec le HTML et le CSS. Il permet de réaliser des interactions dynamiques dans une page web.
+
+Le langage JavaScript n'a rien avoir avec le langage Java; il s'agit de deux langages de programmation complètement différents.
+
+#### Où mettre le JavaScript
+
+Comme pour le CSS, on peut mettre du JavaScript directement dans le `<head>` de notre page, ou encore dans un fichier externe.
+
+```
+<head>
+  ...
+
+  <script>
+    console.log("Hello, world!");
+  </script>
+</head>
+```
+
+```
+<head>
+  ...
+
+  <script defer src="script.js"></script>
+</head>
+```
+
+#### Syntaxe et fonctionnement
+
+À quelques différences près, la syntaxe s'apparente à celle du C#. En JavaScript, les points virgules à la fin des lignes ne sont pas obligatoires. Les noms d'objets et de méthodes commencent également souvent par une lettre minuscule plutôt que majuscule.
+
+Les bugs en JavaScript peuvent être difficile à tracer puisque le langage est très flexible et ne cause pas d'erreur si on accède à une propriété qui n'existe pas déja. Si il y a une erreur toutefois, elle apparaîtra dans la console des outils de développement.
+
+#### Variables
+
+Il existe deux façons de déclarer une variable en JavaScript; le mot clé `const` déclare une variable constante qui ne peut pas être réassignée. Le mot clé `let` déclare une variable qui peut être réassignée. La pratique courante en JavaScript consiste à utiliser `const` par défaut dans tous les cas, et changer à un `let` tel que requis.
+
+```
+const alpha = 123;
+const bravo = "abc";
+
+alpha = 456; // Erreur
+
+let charlie = 123;
+charlie = 456;
+```
+
+Il n'y a pas de types de variables ou de fonctions en JavaScript. Plutôt, les types s'appliquent directement aux valeurs.
+
+```
+let test = 123;
+console.log(typeof test); // "number"
+
+test = "abc"; // Possible, mais à éviter
+console.log(typeof test); // "string"
+```
+
+Si on souhaite utiliser des types en JavaScript, il est suggéré d'utiliser le langage TypeScript plutôt.
+
+#### Fonctions
+
+Il existe plusieurs méthodes afin de déclarer une fonction en JavaScript. En JavaScript, les fonctions sont des valeurs primaires donc on peut les mettre dans des variables et les donner comme paramètre. De plus, elles n'ont pas de types de paramètres ou de type de valeur de retour.
+
+Déclaration à l'aide du mot fonction:
+
+```
+function test(a, b) {
+  return a + b;
+}
+```
+
+Déclaration de fonction "flèchée":
+
+```
+const test = (a, b) => {
+  return a + b;
+}
+```
+
+Il existe une syntaxe de fonction flèchée spéciale pour les situations où la fonction ne fait que retourner une valeur simple:
+
+```
+const test = (a, b) => a + b;
+```
+
+#### Conditions
+
+Les mots clés `if`, `else`, `if else` et même `switch` fonctionnent comme on s'y attend.
+
+```
+const age = parseFloat(prompt("Quel âge avez-vous?"));
+if (age > 18) {
+  console.log("Vous pouvez boire de l'alcool!");
+}
+```
+
+Le bémol à noter est avec les opérateurs `==` ainsi que `!=`. Puisque les variables en JavaScript n'ont pas de type, certaines libertées sont permises lors de la comparaison. Celà peut mener à des résultats étranges, tel que `0 == ""` étant vrai. On peut corriger ce problème en utilisant les opérateurs `===` ou `!==` plutôt. Ceux-ci effectuent une comparaison de type avant de comparer les valeurs.
+
+#### Tableaux
+
+Il est possible d'initialiser des tableaux à l'aide des symboles `[]`. On peut également donner une valeur par défaut aux tableaux. Les tableaux en JavaScript n'ont pas de dimmension fixe ni de type.
+
+```
+const tableauVide = [];
+const noms = ['Alex', 'Rabaa', 'Paul'];
+```
+
+#### Boucles
+
+La plupart des mots clés `while`, `do while` et `for` fonctionne comme on s'y attend. Il existe toutefois un équivalent au `foreach` de certains langages, le `for of`.
+
+```
+const noms = ['Alex', 'Rabaa', 'Paul'];
+for (const nom of noms) {
+  console.log("Bonjour " + nom);
+}
+```
+
+#### Librairie standard
+
+- [`parseFloat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat)
+- [`prompt`](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt) et [`alert`](https://developer.mozilla.org/en-US/docs/Web/API/Window/alert)
+- [`Math`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
+- [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [`String`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+- [`Array`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+
+### Manipulation de pages
+
+#### Sélection d'éléments
+
+Afin de manipuler des éléments ou des balises dans une page, on doit d'abord les sélectionner. On peut utiliser la méthode `document.querySelector` pour sélectionner un seul élément (le premier qui apparaît dans le document), ou `document.querySelectorAll` pour sélectionner plusieurs éléments (retourne un objet qui est similaire à un tableau).
+
+Tous les sélecteurs CSS sont pris en charge.
+
+```
+const h1 = document.querySelector("h1");
+const paragraphes = document.querySelectorAll("article p");
+const premierParagraphe = document.querySelector("article p:first-child");
+```
+
+#### Changer le texte d'un élément
+
+```
+const h1 = document.querySelector("h1");
+
+h1.textContent = "Nouveau titre";
+```
+
+#### Changer les styles d'un élément
+
+Les styles applicables sont les mêmes qu'en CSS, toutefois les noms des propriétés à plusieurs mots seront composés avec des majuscules plutôt que des tirets.
+
+```
+const h1 = document.querySelector("h1");
+h1.style.backgroundColor = "#FF0000";
+
+const paragraphes = document.querySelectorAll("article p");
+for (const p of paragraphes) {
+    p.style.fontWeight = "bold";
+}
+
+```
+
+#### Changer les classes d'un élément
+
+```
+const h1 = document.querySelector("h1");
+
+h1.classList.add("titre"); // Ajouter une classe à un élément
+
+h1.classList.remove("test"); // Retirer une classe à un élément
+
+h1.classList.toggle("test"); // Alterner la classe à un élément
+```
+
+#### Accéder ou changer la valeur d'un champ
+
+```
+const input = document.querySelector("input");
+input.value = "Nouvelle valeur";
+```
+
+#### Changer un attribut
+
+On peut changer la majorité des attributs des éléments en utilisant la bonne propriété. Souvent, elle aura le même nom en JavaScript. Par exemple, pour changer le `src` d'une image:
+
+```
+const img = document.querySelector("img");
+img.src = "images/test.png";
+```
+
+#### Ajouter un évènement
+
+Afin de réagir aux actions de l'utilisateur sur notre page, il est possible d'ajouter un évènement sur un certain élément. On doit configurer cet évènement avec le nom de l'évènement à observer, ainsi qu'une fonction qui sera appelée lorsque l'évènement se produira.
+
+```
+const h1 = document.querySelector("h1");
+h1.addEventListener("click", (event) => {
+    h1.textContent = "Cliqué!";
+});
+```
+
+#### Formulaires
+
+Lorsqu'on ajoute un évènement sur le bouton de soumission (`type="submit"`) d'un formulaire, on doit empêcher l'envoi par défaut du formulaire vers le serveur à l'aide de `event.preventDefault()`.
+
+```
+// Saluer l'utilisateur dans le h1
+const champ = document.querySelector("input[type=text]");
+const soumettre = document.querySelector("input[type=submit]");
+const h1 = document.querySelector("h1");
+
+soumettre.addEventListener("click", (event) => {
+    event.preventDefault(); // Prévenir que le formulaire se fasse soumettre au serveur
+
+    h1.textContent = "Bonjour " + champ.value;
+
+    champ.value = ""; // Réinitialiser la valeur du champ
+});
+```

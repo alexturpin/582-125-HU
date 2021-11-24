@@ -192,6 +192,13 @@ const Home = () => {
               </a>
             </Link>
           </li>
+          <li>
+            <Link href="/cours/11-javascript">
+              <a target="_blank" rel="noreferrer">
+                Semaine 11 - JavaScript
+              </a>
+            </Link>
+          </li>
         </ul>
       </section>
     </>

@@ -186,16 +186,16 @@ const Home = () => {
             </Link>
           </li>
           <li>
-            <Link href="/cours/10-hebergement-referencement">
+            <Link href="/cours/11-hebergement-referencement">
               <a target="_blank" rel="noreferrer">
-                Semaine 10 - Hébèrgement et référencement
+                Semaine 11 - Hébèrgement et référencement
               </a>
             </Link>
           </li>
           <li>
-            <Link href="/cours/11-javascript">
+            <Link href="/cours/12-javascript">
               <a target="_blank" rel="noreferrer">
-                Semaine 11 - JavaScript
+                Semaine 12 - JavaScript
               </a>
             </Link>
           </li>

@@ -116,6 +116,9 @@ const Home = () => {
               </li>
             </ul>
           </li>
+          <li>
+            <a href="https://caniuse.com/" target="_blank" rel="noreferrer">Can I Use afin de vérifier la prise en charge des navigateurs</a>
+          </li>
         </ul>
       </section>
 

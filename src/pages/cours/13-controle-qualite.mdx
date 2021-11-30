@@ -1,0 +1,55 @@
+## Semaine 13 - Contrôle de la qualité
+
+### Introduction
+
+Le contrôle de la qualité est une des parties les plus importantes du développement de logiciel et de sites web. Les utilisateurs en 2021 ont très peu de patience pour des expériences qui fonctionnent mal, il est donc important de faire du contrôle de la qualité une priorité.
+
+### Catégories de contrôle de qualité
+
+On peut classer les techniques de contrôle de la qualité en deux catégories: manuelles et automatiques.
+
+Les techniques manuelles consistent d'un humain qui va manuellement effectuer des vérifications de qualité auprès d'une application ou d'un site web, et noter les résultats à la main.
+
+Les techniques automatiques utilisent des programmes et des scripts qui peuvent évaluer certains aspects de la qualité d'une application ou d'un site web de façon automatique. Ces techniques sont bien souvent intégégrées à l'aide de Git et GitHub, afin que les tests soient faits automatiquement à tout changement de code.
+
+### Environnements
+
+Lorsqu'on effectue un contrôle de la qualité, il est important d'être conscient des différents environnements possibles pour notre application ou site web.
+
+#### Local vs hébergé
+
+Il est fort possible qu'il existe certaines différences entre une version de test locale de votre site web sur votre ordinateur vs une version déployée vers votre hébergement. Il est donc toujours primordial d'effectuer un contrôle de la qualité sur la version du site web hébergée, une fois celle-ci en ligne.
+
+#### Différents navigateurs
+
+Différents navigateurs peuvent afficher de différents résultats sur une même page. Ce ne sont pas tous les navigateurs qui prennent en charge les mêmes fonctionalités. Il est donc important de tester son site web dans plusieurs navigateurs.
+
+Il est recommandé de tester au moins dans un navigateur de bureau et dans un navigateur mobile. Les deux navigateurs les plus utilisés sont Google Chrome et Safari. Si vous avez un appareil Apple, il est suggéré de tester Chrome et Safari. Sinon, vous pouvez tester Chrome sur bureau et sur Android, ou tester Firefox également.
+
+À noter que certains navigateurs utilisent le même moteur d'affichage, ce qui veut dire qu'ils afficheront toujours une page de la même façon. Il est donc inutile de tester plusieurs de ces navigateurs. Par exemple, Google Chrome et Microsoft Edge utilisent tous deux le moteur d'affichage de Chrome. De même, tous les navigateurs disponibles sur iPhone utilisent le moteur d'affichage de Safari.
+
+### Exemples de composantes à tester
+
+Voici une liste non exhaustive de composantes à tester sur les pages de votre site. Il est suggéré de construire une grille de contrôle de la qualité qui comprend les composantes que vous désirez tester, et qui est également organisée par page de votre site et par navigateur.
+
+- Texte
+  - Est-ce que le bon texte est présent?
+  - Est-ce que la qualité de la langue est adéquate?
+  - Est-ce dans la bonne langue (pour les sites webs en plusieurs langues)
+- Média (images, vidéos, audio)
+  - Est-ce que les médias chargent bien?
+  - Sont-ils de la bonne taille?
+- Interactivités (vérifier le fonctionnement si il y a lieu)
+  - Liens (internes, externes)
+  - Formulaires
+  - JavaScript (vérifier la console pour des erreurs également)
+- Styles
+  - Les styles sont-ils conformes au design?
+  - Lisibilité
+  - Placement et taille des éléments
+  - Affichage grand écran (ordinateur de bureau)
+  - Affichage petit écran (appareil mobile)
+- Outils automatiques
+  - Lighthouse
+  - Validateur W3C
+
